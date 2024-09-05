@@ -50,85 +50,77 @@ class CreateProject(TemplateCommand):
         import aratinga
 
         cms_path = os.path.dirname(aratinga.__file__)
-        if not options["template"]:
-            options["template"] = "basic"
-        template_path = os.path.join(
-            os.path.join(cms_path, "project_template"), options["template"]
+
+        options["template"] = os.path.join(cms_path, "project_template")
+
+        # Assume all files are NOT Django templates.
+        options["extensions"] = ["toml"]
+        # Treat these files as Django templates to render the boilerplate.
+        options["files"] = [
+            "0002_initial_data.py",
+            "base.py",
+            "dev.py",
+            "manage.py",
+            "prod.py",
+            "README.md",
+            "requirements.txt",
+            "staging.py",
+            "wsgi.py",
+        ]
+
+        # Set options
+        message = "Creating a Aratinga project called %(project_name)s"
+
+        if options.get("sitename"):
+            message += " for %(sitename)s"
+        else:
+            options["sitename"] = project_name
+
+        if options.get("domain"):
+            message += " (%(domain)s)"
+            # Strip protocol out of domain if it is present.
+            options["domain"] = options["domain"].split("://")[-1]
+            # Figure out www logic.
+            if options["domain"].startswith("www."):
+                options["domain_nowww"] = options["domain"].split("www.")[-1]
+            else:
+                options["domain_nowww"] = options["domain"]
+        else:
+            options["domain"] = "localhost"
+            options["domain_nowww"] = options["domain"]
+
+        # Add additional custom options to the context.
+        options["aratinga_release"] = aratinga.release
+        options["wagtail_release"] = wagtail.VERSION
+
+        # Print a friendly message
+        print(
+            message
+            % {
+                "project_name": project_name,
+                "sitename": options.get("sitename"),
+                "domain": options.get("domain"),
+            }
         )
 
-        # Check if provided template is built-in to aratinga,
-        # otherwise, do not change it.
-        if os.path.isdir(template_path):
-            options["template"] = template_path
+        # Run command
+        super().handle("project", project_name, target, **options)
 
-            # Assume all files are NOT Django templates.
-            options["extensions"] = ["toml"]
-            # Treat these files as Django templates to render the boilerplate.
-            options["files"] = [
-                "0002_initial_data.py",
-                "base.py",
-                "dev.py",
-                "manage.py",
-                "prod.py",
-                "README.md",
-                "requirements.txt",
-                "staging.py",
-                "wsgi.py",
-            ]
+        # Be a friend once again.
+        print(
+            "Success! %(project_name)s has been created"
+            % {"project_name": project_name}
+        )
 
-            # Set options
-            message = "Creating a Wagtail CRX project called %(project_name)s"
-
-            if options.get("sitename"):
-                message += " for %(sitename)s"
-            else:
-                options["sitename"] = project_name
-
-            if options.get("domain"):
-                message += " (%(domain)s)"
-                # Strip protocol out of domain if it is present.
-                options["domain"] = options["domain"].split("://")[-1]
-                # Figure out www logic.
-                if options["domain"].startswith("www."):
-                    options["domain_nowww"] = options["domain"].split("www.")[-1]
-                else:
-                    options["domain_nowww"] = options["domain"]
-            else:
-                options["domain"] = "localhost"
-                options["domain_nowww"] = options["domain"]
-
-            # Add additional custom options to the context.
-            options["coderedcms_release"] = aratinga.release
-            options["wagtail_release"] = wagtail.VERSION
-
-            # Print a friendly message
-            print(
-                message
-                % {
-                    "project_name": project_name,
-                    "sitename": options.get("sitename"),
-                    "domain": options.get("domain"),
-                }
-            )
-
-            # Run command
-            super().handle("project", project_name, target, **options)
-
-            # Be a friend once again.
-            print(
-                "Success! %(project_name)s has been created"
-                % {"project_name": project_name}
-            )
-
-            nextsteps = """
-            Next steps:
-                1. cd %(directory)s/
-                2. python manage.py migrate
-                3. python manage.py createsuperuser
-                4. python manage.py runserver
-                5. Go to http://localhost:8000/admin/ and start editing!
-            """
-            print(nextsteps % {"directory": target if target else project_name})
+        nextsteps = """
+        Next steps:
+            1. cd %(directory)s/
+            2. python manage.py migrate
+            3. python manage.py createsuperuser
+            4. python manage.py runserver
+            5. Go to http://localhost:8000/admin/ and start editing!
+        """
+        print(nextsteps % {"directory": target if target else project_name})
 
 COMMANDS = {
     "start": CreateProject(),
