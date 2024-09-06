@@ -57,15 +57,12 @@ class CreateProject(TemplateCommand):
         options["extensions"] = ["toml"]
         # Treat these files as Django templates to render the boilerplate.
         options["files"] = [
-            "0002_initial_data.py",
             "base.py",
             "dev.py",
             "manage.py",
             "prod.py",
             "README.md",
             "requirements.txt",
-            "staging.py",
-            "wsgi.py",
         ]
 
         # Set options
