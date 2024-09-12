@@ -1,8 +1,6 @@
-# -- PACKAGE --------------------------
-
 [build-system]
-requires = ["setuptools>=65.5"]
 build-backend = "setuptools.build_meta"
+requires = ["setuptools>=64"]
 
 [project]
 name = "aratinga"
@@ -10,45 +8,19 @@ description = "Wagtail + Voreios Extensions enabling rapid development of brasil
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [
-    {name = "Roraimae", email = "fabio@voreios.com.br"}
-]
-classifiers = [
-    "Environment :: Web Environment",
-    "Framework :: Django",
-    "Intended Audience :: Developers",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3 :: Only",
-    "Framework :: Django",
-    "Framework :: Django :: 4.2",
-    "Framework :: Django :: 5.0",
-    "Framework :: Wagtail",
-    "Framework :: Wagtail :: 6",
-    "Topic :: Internet :: WWW/HTTP",
-    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
-    "Topic :: Internet :: WWW/HTTP :: Site Management",
-]
-dependencies = [
-    "django-govbrds==0.0.1",
-    "Django>=4.2,<6.0",
-    "wagtail>=6.0,<7.0",
-    "aratinga-seo>=2.5,<3",
+    {name = "Fabio Santos", email = "fabio@voreios.com.br"}
 ]
 
 dynamic = ["version"]
 license = {file = "LICENSE.txt"}
+dependencies = [
+    "django>=4.2.16",
+    "django-govbrds",
+    
+]
 
 [project.scripts]
 aratinga = "aratinga.bin.aratinga:main"
-
-[project.urls]
-Source = "https://github.com/roraimae/aratinga"
 
 [tool.setuptools]
 packages = ["aratinga"]
@@ -57,8 +29,4 @@ packages = ["aratinga"]
 version = {attr = "aratinga.__version__"}
 
 [tool.uv.sources]
-bird-feeder = { workspace = true }
-tqdm = { git = "https://github.com/tqdm/tqdm" }
-
-[tool.uv.workspace]
-members = ["packages/*"]
+django-govbrds = { git = "https://github.com/roraimae/django-govbrds.git" }
