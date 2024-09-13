@@ -35,10 +35,9 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: Site Management",
 ]
 dependencies = [
-    "django-govbrds==0.0.1",
     "Django>=4.2,<6.0",
+    "ruff>=0.6.4",
     "wagtail>=6.0,<7.0",
-    "aratinga-seo>=2.5,<3",
 ]
 
 dynamic = ["version"]
@@ -55,10 +54,6 @@ packages = ["aratinga"]
 
 [tool.setuptools.dynamic]
 version = {attr = "aratinga.__version__"}
-
-[tool.uv.sources]
-bird-feeder = { workspace = true }
-tqdm = { git = "https://github.com/tqdm/tqdm" }
 
 [tool.uv.workspace]
 members = ["packages/*"]
