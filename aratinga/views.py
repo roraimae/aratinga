@@ -1,3 +1,6 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import permission_required
+
 from django.core.paginator import EmptyPage
 from django.core.paginator import InvalidPage
 from django.core.paginator import PageNotAnInteger
@@ -16,6 +19,18 @@ from forms import SearchForm
 
 from aratinga.templatetags.aratinga_tags import get_name_of_class
 from aratinga.models import LayoutSettings
+
+
+@login_required
+@permission_required(
+    "wagtailadmin.access_admin",
+    login_url="wagtailadmin_login",
+)
+def import_index(request):
+    """
+    Landing page to replace wagtailimportexport.
+    """
+    return render(request, "wagtailimportexport/index.html")
 
 
 def search(request):

@@ -1,2 +1,2 @@
-aratingacms=={{aratingacms_release.0}}.{{aratingacms_release.1}}.*
+aratinga=={{aratinga_release.0}}.{{aratinga_release.1}}.*
 wagtail=={{wagtail_release.0}}.{{wagtail_release.1}}.*
