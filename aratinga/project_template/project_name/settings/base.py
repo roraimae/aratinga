@@ -26,10 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 INSTALLED_APPS = [
     # This project
     "website",
-
     "modelcluster",
     "taggit",
-
     # Wagtail
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
@@ -44,7 +42,6 @@ INSTALLED_APPS = [
     "wagtail.contrib.settings",
     "wagtail.contrib.table_block",
     "wagtail.admin",
-
     # Django
     "django.contrib.admin",
     "django.contrib.auth",

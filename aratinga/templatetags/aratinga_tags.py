@@ -2,6 +2,7 @@ from django import template
 
 register = template.Library()
 
+
 @register.filter
 def get_name_of_class(class_type):
     if hasattr(class_type.__class__, "search_name"):
