@@ -1,7 +1,22 @@
+from django.core.paginator import EmptyPage
+from django.core.paginator import InvalidPage
+from django.core.paginator import PageNotAnInteger
+from django.core.paginator import Paginator
+
+from django.shortcuts import render
+from django.contrib.contenttypes.models import ContentType
+
+from wagtail.models import Page
+from wagtail.models import get_page_models
+from wagtail.search.backends import get_search_backend
+from wagtail.search.backends.database.mysql.mysql import MySQLSearchBackend
+
+
 from forms import SearchForm
 
-from aratinga.settings import cms_settings
 from aratinga.templatetags.aratinga_tags import get_name_of_class
+from aratinga.models import LayoutSettings
+
 
 def search(request):
     """
@@ -27,9 +42,7 @@ def search(request):
         if search_model:
             try:
                 # If provided a model name, try to get it
-                model = ContentType.objects.get(
-                    model=search_model
-                ).model_class()
+                model = ContentType.objects.get(model=search_model).model_class()
                 # Workaround for Wagtail MySQL search bug.
                 # See: https://github.com/wagtail/wagtail/issues/11273
                 backend = get_search_backend()
@@ -60,7 +73,7 @@ def search(request):
     # Render template
     return render(
         request,
-        "coderedcms/pages/search.html",
+        "aratinga/pages/search.html",
         {
             "request": request,
             "pagetypes": pagetypes,

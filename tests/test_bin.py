@@ -42,9 +42,7 @@ class TestCmsStart(unittest.TestCase):
         # Run
         cms_main()
         # Assert files exist
-        self.assertTrue(
-            os.path.exists(os.path.join(self.TEST_DIR, "README.md"))
-        )
+        self.assertTrue(os.path.exists(os.path.join(self.TEST_DIR, "README.md")))
         self.cleanup()
 
     def test_allopts(self):
@@ -63,9 +61,7 @@ class TestCmsStart(unittest.TestCase):
         # Run
         cms_main()
         # Assert files exist
-        self.assertTrue(
-            os.path.exists(os.path.join(self.TEST_DIR, "README.md"))
-        )
+        self.assertTrue(os.path.exists(os.path.join(self.TEST_DIR, "README.md")))
         self.cleanup()
 
     def test_domain_www(self):
@@ -82,7 +78,5 @@ class TestCmsStart(unittest.TestCase):
         # Run
         cms_main()
         # Assert files exist
-        self.assertTrue(
-            os.path.exists(os.path.join(self.TEST_DIR, "README.md"))
-        )
+        self.assertTrue(os.path.exists(os.path.join(self.TEST_DIR, "README.md")))
         self.cleanup()

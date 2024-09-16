@@ -5,6 +5,7 @@ import sys
 from django.core.management.templates import TemplateCommand
 from django.core.management.utils import get_random_secret_key
 
+
 class CreateProject(TemplateCommand):
     """
     Based on django.core.management.startproject
@@ -119,6 +120,7 @@ class CreateProject(TemplateCommand):
         """
         print(nextsteps % {"directory": target if target else project_name})
 
+
 COMMANDS = {
     "start": CreateProject(),
 }
@@ -130,8 +132,7 @@ def prog_name():
 
 def help_index():
     print(
-        "Type '%s help <subcommand>' for help on a specific subcommand.\n"
-        % prog_name()
+        "Type '%s help <subcommand>' for help on a specific subcommand.\n" % prog_name()
     )
     print("Available subcommands:\n")
     for name, cmd in sorted(COMMANDS.items()):

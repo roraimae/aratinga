@@ -14,6 +14,7 @@ Maintains version of aratinga.
 
 See: https://www.python.org/dev/peps/pep-0440/
 """
+
 release = ["0", "0", "1", "a", "dev"]
 
 
