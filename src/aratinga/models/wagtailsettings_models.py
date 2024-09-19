@@ -15,10 +15,11 @@ from wagtail.images import get_image_model_string
 from aratinga.settings import cms_settings
 
 
-def conditional_register_setting(condition):
+def conditional_register_setting(condition: bool, **kwargs):
+    
     def decorator(cls):
-        if condition:
-            register_setting(cls)
+        if not condition:
+            register_setting(cls, **kwargs)
         return cls
 
     return decorator

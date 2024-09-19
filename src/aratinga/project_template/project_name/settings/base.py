@@ -26,6 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 INSTALLED_APPS = [
     # This project
     "website",
+    # Aratinga
+    "aratinga",
     "modelcluster",
     "taggit",
     # Wagtail

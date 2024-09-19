@@ -1,5 +1,6 @@
+#!/usr/bin/env python
 """
-Maintains version of aratinga.
+Maintains version of aratiga.
 4th element is for pre-releases. Leave blank for stable releases.
 
     X.Y.ZaN   # Alpha release
@@ -15,7 +16,7 @@ Maintains version of aratinga.
 See: https://www.python.org/dev/peps/pep-0440/
 """
 
-release = ["0", "0", "1", "a", "dev"]
+release = ["0", "1", "0", "a0", "dev0"]
 
 
 def _get_version() -> str:
