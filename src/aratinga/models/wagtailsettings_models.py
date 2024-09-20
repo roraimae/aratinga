@@ -133,62 +133,6 @@ class LayoutSettings(ClusterableModel, BaseSiteSetting):
         help_text=_("The API Key used for Mailchimp."),
     )
 
-    navbar_panels = [
-        MultiFieldPanel(
-            [
-                FieldPanel("navbar_color_scheme"),
-                FieldPanel("navbar_class"),
-                FieldPanel("navbar_fixed"),
-                FieldPanel("navbar_content_fluid"),
-                FieldPanel("navbar_collapse_mode"),
-                FieldPanel("navbar_format"),
-                FieldPanel("navbar_search"),
-            ],
-            heading=_("Site Navbar Layout"),
-        ),
-        InlinePanel(
-            "site_navbar",
-            help_text=_("Choose one or more navbars for your site."),
-            heading=_("Site Navbars"),
-        ),
-    ]
-
-    footer_panels = [
-        InlinePanel(
-            "site_footer",
-            help_text=_("Choose one or more footers for your site."),
-            heading=_("Site Footers"),
-        ),
-    ]
-
-    panels = [
-        MultiFieldPanel(
-            [
-                FieldPanel("logo"),
-                FieldPanel("favicon"),
-            ],
-            heading=_("Branding"),
-        ),
-        MultiFieldPanel(
-            [
-                FieldPanel("from_email_address"),
-                FieldPanel("search_num_results"),
-                FieldPanel("external_new_tab"),
-            ],
-            heading=_("General"),
-        ),
-        MultiFieldPanel(
-            [
-                FieldPanel("google_maps_api_key"),
-                FieldPanel("mailchimp_api_key"),
-            ],
-            heading=_("API Keys"),
-        ),
-    ]
-    if not cms_settings.CMS_DISABLE_NAVBAR:
-        panels += navbar_panels
-    if not cms_settings.CMS_DISABLE_FOOTER:
-        panels += footer_panels
 
     def __init__(self, *args, **kwargs):
         """
