@@ -4,4 +4,5 @@ into files based on their purpose, but provide them all via
 a single `models` module.
 """
 
+from .page_models import *  # noqa
 from .wagtailsettings_models import *  # noqa
