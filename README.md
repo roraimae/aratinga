@@ -11,3 +11,16 @@
 Aratinga é um sistema de gerenciamento de Conteúdo para internet (_Content Management System_ em inglês) em Python / Django e Wagtail
 
 Uma alternativa profissional para criação e marketing de websites com Wagtail.
+
+
+aratinga start mysite
+
+Creating a Aratinga project called mysite
+Success! mysite has been created
+
+        Next steps:
+            1. cd mysite/
+            2. python manage.py migrate
+            3. python manage.py createsuperuser
+            4. python manage.py runserver
+            5. Go to http://localhost:8000/admin/ and start editing!
