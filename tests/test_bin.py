@@ -3,7 +3,7 @@ import shutil
 import sys
 import unittest
 
-from aratinga.bin.aratinga import main as cms_main
+from aratinga.bin import main as cms_main
 
 
 class TestCmsStart(unittest.TestCase):
@@ -24,7 +24,7 @@ class TestCmsStart(unittest.TestCase):
     def test_help(self):
         # Set args
         sys.argv = ["cms_main", "help"]
-        # Run
+        # Runpyt
         cms_main()
         # Nothing to assert here... just make sure it doesn't error out.
 
