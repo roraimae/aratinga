@@ -14,6 +14,7 @@ dependencies = [
     "wagtail>=6.0,<7.0",
     "aratinga-seo",
     "django-govbrds",
+    "django-bootstrap5>=24.3",
 ]
 
 [project.scripts]
@@ -30,5 +31,5 @@ build-backend = "hatchling.build"
 path = "./src/aratinga/__about__.py"
 
 [tool.uv.sources]
-aratinga-seo = { git = "https://github.com/voreios/aratinga-seo" }
-django-govbrds = { git = "https://github.com/roraimae/django-govbrds" }
+aratinga-seo = { git = "https://github.com/voreios/aratinga-seo", rev = "main" }
+django-govbrds = { git = "https://github.com/roraimae/django-govbrds", rev = "main" }
