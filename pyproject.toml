@@ -3,6 +3,7 @@ name = "aratinga"
 dynamic = ["version"]
 description = "Wagtail + Voreios Extensions enabling rapid development of brasilian public educational-focused websites."
 readme = "README.md"
+license = {file = "LICENSE"}
 requires-python = ">=3.12"
 authors = [
     {name = "Roraimae", email = "fabio@voreios.com.br"}
@@ -11,10 +12,15 @@ dependencies = [
     "ruff>=0.6.4",
     "Django>=4.2,<6.0",
     "wagtail>=6.0,<7.0",
+    "aratinga-seo",
+    "django-govbrds",
 ]
 
 [project.scripts]
 aratinga = "aratinga.bin:main"
+
+[project.urls]
+Source = "https://github.com/roraimae/aratinga"
 
 [build-system]
 requires = ["hatchling"]
@@ -22,3 +28,7 @@ build-backend = "hatchling.build"
 
 [tool.hatch.version]
 path = "./src/aratinga/__about__.py"
+
+[tool.uv.sources]
+aratinga-seo = { git = "https://github.com/voreios/aratinga-seo" }
+django-govbrds = { git = "https://github.com/roraimae/django-govbrds" }
