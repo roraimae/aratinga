@@ -4,57 +4,11 @@
 {% wagtail_site as site %}
 
 <!doctype html>
-<html prefix="og: http://ogp.me/ns#" lang="{{ LANGUAGE_CODE }}">
+<html lang="{{ LANGUAGE_CODE }}">
 
 <head>
-  {% block tracking %}
-  {% if not disable_analytics and settings.aratinga.AnalyticsSettings.ga_g_tracking_id %}
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{settings.aratinga.AnalyticsSettings.ga_g_tracking_id}}"></script>
-  <script>
-    cms_track_clicks = {{settings.aratinga.AnalyticsSettings.ga_track_button_clicks|yesno:"true,false"}};
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{settings.aratinga.AnalyticsSettings.ga_g_tracking_id}}');
-  </script>
-  {% endif %}
-  {% if not disable_analytics and settings.aratinga.AnalyticsSettings.gtm_id %}
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','{{settings.aratinga.AnalyticsSettings.gtm_id}}');
-  </script>
-  <!-- End Google Tag Manager -->
-  {% endif %}
-  {% if not disable_analytics and settings.aratinga.AnalyticsSettings.head_scripts %}
-  {{settings.aratinga.AnalyticsSettings.head_scripts|safe}}
-  {% endif %}
-  {% endblock %}
-
-  {# Pass in CMS variables to JavaScript #}
-  <script>
-    cms_site_url = "{{site.root_url}}";
-    cms_version = "{% aratinga_version %}";
-    {% if not disable_layout %}
-    cms_external_new_tab = {{settings.aratinga.LayoutSettings.external_new_tab|yesno:"true,false"}};
-    {% else %}
-    cms_external_new_tab = false;
-    {% endif %}
-  </script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  {% block frontend_assets %}
-  <link rel="stylesheet" href="{% static 'aratinga/vendor/bootstrap/dist/css/bootstrap.min.css' %}?v={% aratinga_version %}">
-  {% endblock %}
-
-
-  {% block custom_assets %}{% endblock %}
 
   {% block favicon %}
   {% if not disable_layout and settings.aratinga.LayoutSettings.favicon %}
