@@ -47,4 +47,15 @@ class Migration(migrations.Migration):
             },
             bases=('aratinga.aratingapage',),
         ),
+        migrations.CreateModel(
+            name='WebPage',
+            fields=[
+                ('aratingapage_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='aratinga.aratingapage')),
+                ('body', wagtail.fields.StreamField([], blank=True, block_lookup={}, null=True)),
+            ],
+            options={
+                'verbose_name': 'Web Page',
+            },
+            bases=('aratinga.aratingapage',),
+        ),
     ]

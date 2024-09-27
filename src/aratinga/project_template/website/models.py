@@ -2,7 +2,7 @@
 Create or customize your page models here.
 """
 
-from aratinga.models import AratingaArticlePage, AratingaArticleIndexPage
+from aratinga.models import AratingaArticlePage, AratingaArticleIndexPage, AratingaWebPage
 
 class ArticlePage(AratingaArticlePage):
     """
@@ -35,3 +35,14 @@ class ArticleIndexPage(AratingaArticleIndexPage):
     subpage_types = ["website.ArticlePage"]
 
     template = "aratinga/pages/article_index_page.html"
+
+
+class WebPage(AratingaWebPage):
+    """
+    General use page with featureful streamfield.
+    """
+
+    class Meta:
+        verbose_name = "Web Page"
+
+    template = "aratinga/pages/web_page.html"
