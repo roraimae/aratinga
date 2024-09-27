@@ -2,7 +2,7 @@
 Create or customize your page models here.
 """
 
-from aratinga.models import AratingaArticlePage
+from aratinga.models import AratingaArticlePage, AratingaArticleIndexPage
 
 class ArticlePage(AratingaArticlePage):
     """
@@ -18,3 +18,20 @@ class ArticlePage(AratingaArticlePage):
 
     template = "aratinga/pages/article_page.html"
     search_template = "aratinga/pages/article_page.search.html"
+
+
+class ArticleIndexPage(AratingaArticleIndexPage):
+    """
+    Shows a list of article sub-pages.
+    """
+
+    class Meta:
+        verbose_name = "Article Landing Page"
+
+    # Override to specify custom index ordering choice/default.
+    index_query_pagemodel = "website.ArticlePage"
+
+    # Only allow ArticlePages beneath this page.
+    subpage_types = ["website.ArticlePage"]
+
+    template = "aratinga/pages/article_index_page.html"

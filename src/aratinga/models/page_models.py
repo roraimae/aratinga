@@ -37,7 +37,7 @@ from wagtail.models import PageBase
 from wagtail.search import index
 from wagtail.fields import StreamField
 from wagtail.admin.panels import FieldPanel
-
+from wagtail.admin.panels import MultiFieldPanel
 
 from aratinga.blocks import CONTENT_STREAMBLOCKS
 from aratinga.blocks import LAYOUT_STREAMBLOCKS
@@ -80,6 +80,19 @@ class AratingaPage(Page, metaclass=AratingaPageMeta):
 
     # Do not allow this page type to be created in wagtail admin
     is_creatable = False
+
+    # Subclasses can override these fields to enable custom
+    # ordering based on specific subpage fields.
+    index_order_by_default = ""
+    index_order_by_choices = (
+        ("", _("Default Ordering")),
+        ("-first_published_at", _("Date first published, newest to oldest")),
+        ("first_published_at", _("Date first published, oldest to newest")),
+        ("-last_published_at", _("Date updated, newest to oldest")),
+        ("last_published_at", _("Date updated, oldest to newest")),
+        ("title", _("Title, alphabetical")),
+        ("-title", _("Title, reverse alphabetical")),
+    )
 
 
 ###############################################################################
@@ -175,4 +188,38 @@ class AratingaArticlePage(AratingaWebPage):
         null=True,
         blank=True,
         verbose_name=_("Display publish date"),
+    )
+
+class AratingaArticleIndexPage(AratingaWebPage):
+    """
+    Shows a list of article sub-pages.
+    """
+
+    class Meta:
+        verbose_name = _("Aratinga Article Index Page")
+        abstract = True
+
+    template = "aratinga/pages/article_index_page.html"
+
+    index_show_subpages_default = True
+
+    index_order_by_default = "-date_display"
+    index_order_by_choices = (
+        ("-date_display", "Display publish date, newest first"),
+    ) + AratingaWebPage.index_order_by_choices
+
+    show_images = models.BooleanField(
+        default=True,
+        verbose_name=_("Show images"),
+    )
+    show_captions = models.BooleanField(
+        default=True,
+    )
+    show_meta = models.BooleanField(
+        default=True,
+        verbose_name=_("Show author and date info"),
+    )
+    show_preview_text = models.BooleanField(
+        default=True,
+        verbose_name=_("Show preview text"),
     )
