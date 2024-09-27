@@ -28,6 +28,9 @@ INSTALLED_APPS = [
     "website",
     # Aratinga
     "aratinga",
+    "django_bootstrap5",
+    "django_govbrds",
+    "aratinga_seo",
     "modelcluster",
     "taggit",
     # Wagtail

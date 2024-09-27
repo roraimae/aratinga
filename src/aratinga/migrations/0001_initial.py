@@ -20,6 +20,8 @@ class Migration(migrations.Migration):
             name='AratingaPage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.page')),
+                ('index_order_by', models.CharField(blank=True, choices=[('', 'Default Ordering'), ('-first_published_at', 'Date first published, newest to oldest'), ('first_published_at', 'Date first published, oldest to newest'), ('-last_published_at', 'Date updated, newest to oldest'), ('last_published_at', 'Date updated, oldest to newest'), ('title', 'Title, alphabetical'), ('-title', 'Title, reverse alphabetical')], default='', help_text='Child pages will then be sorted by this attribute.', max_length=255, verbose_name='Order child pages by')),
+                ('custom_template', models.CharField(blank=True, max_length=255, verbose_name='Template')),
             ],
             options={
                 'verbose_name': 'Aratinga Page',

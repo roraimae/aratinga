@@ -17,6 +17,7 @@ source = { editable = "." }
 dependencies = [
     { name = "aratinga-seo" },
     { name = "django" },
+    { name = "django-bootstrap5" },
     { name = "django-govbrds" },
     { name = "ruff" },
     { name = "wagtail" },
@@ -24,17 +25,18 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "aratinga-seo", git = "https://github.com/voreios/aratinga-seo" },
+    { name = "aratinga-seo", git = "https://github.com/voreios/aratinga-seo?rev=main" },
     { name = "django", specifier = ">=4.2,<6.0" },
-    { name = "django-govbrds", git = "https://github.com/roraimae/django-govbrds" },
+    { name = "django-bootstrap5", specifier = ">=24.3" },
+    { name = "django-govbrds", git = "https://github.com/roraimae/django-govbrds?rev=main" },
     { name = "ruff", specifier = ">=0.6.4" },
     { name = "wagtail", specifier = ">=6.0,<7.0" },
 ]
 
 [[package]]
 name = "aratinga-seo"
-version = "0.1.0a0.dev0"
-source = { git = "https://github.com/voreios/aratinga-seo#89b98db015fc41d0cab40f88a006ef90932dd2f5" }
+version = "0.1.0a0.dev1"
+source = { git = "https://github.com/voreios/aratinga-seo?rev=main#b0e47d431a60662c6fe094cda51fb140d638aaad" }
 dependencies = [
     { name = "aratinga" },
 ]
@@ -117,6 +119,18 @@ wheels = [
 ]
 
 [[package]]
+name = "django-bootstrap5"
+version = "24.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/64/ef/c37f1c2f5a40919217251ad6b2c825bfcec0e8ed5024b5c6df874cbc8caf/django_bootstrap5-24.3.tar.gz", hash = "sha256:ca5ec5568fc2a3fc239f0cb8ce41a7df3802b8c4af930d7f64451784ec7ddc16", size = 54344 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e8/11/e5ab1d37bae5bd4e10e240c99601f450db618f6d370d75e742f9104778b9/django_bootstrap5-24.3-py3-none-any.whl", hash = "sha256:98f7916f9f7f9c34dfe157f7c062a28ebf6d17ff95307bef260ba794ba34e2a0", size = 26321 },
+]
+
+[[package]]
 name = "django-filter"
 version = "24.3"
 source = { registry = "https://pypi.org/simple" }
@@ -130,8 +144,8 @@ wheels = [
 
 [[package]]
 name = "django-govbrds"
-version = "0.0.1"
-source = { git = "https://github.com/roraimae/django-govbrds#fda689d634caa32845f3a652b95ceebf51995e1e" }
+version = "0.1.0a0.dev0"
+source = { git = "https://github.com/roraimae/django-govbrds?rev=main#dee83f02b68f41aeeb459bb025a607afddf91bb1" }
 dependencies = [
     { name = "django" },
 ]

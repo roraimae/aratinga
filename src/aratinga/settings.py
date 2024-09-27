@@ -1,12 +1,40 @@
 import os
 from django.apps import apps
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 
 class _DefaultSettings:
     CMS_THEME = "Bootstrap"
     CMS_DISABLE_LAYOUT = False
     CMS_DISABLE_NAVBAR = False
     CMS_DISABLE_FOOTER = False
+
+
+    CMS_FRONTEND_TEMPLATES_PAGES = {
+        # templates that are available for all page types
+        "*": [
+            (
+                "",
+                _("Default"),
+            ),
+            (
+                "aratinga/pages/web_page.html",
+                _("Web page showing title and cover image"),
+            ),
+            (
+                "aratinga/pages/web_page_notitle.html",
+                _("Web page without title and cover image"),
+            ),
+            (
+                "aratinga/pages/home_page.html",
+                _("Home page without title and cover image"),
+            ),
+            (
+                "aratinga/pages/base.html",
+                _("Blank page - no navbar or footer"),
+            ),
+        ],
+    }
 
     CMS_FRONTEND_NAVBAR_COLLAPSE_MODE_CHOICES = []
     CMS_FRONTEND_NAVBAR_COLOR_SCHEME_CHOICES = []
