@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 
@@ -28,6 +29,7 @@ INSTALLED_APPS = [
     "website",
     # Aratinga
     "aratinga",
+    "aratinga.themes",
     "django_bootstrap5",
     "django_govbrds",
     "aratinga_seo",
@@ -69,6 +71,8 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     # CMS functionality
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
+    # CMS Themes
+    'aratinga.themes.middleware.ThemeMiddleware',
 ]
 
 ROOT_URLCONF = "{{ project_name }}.urls"
@@ -76,7 +80,9 @@ ROOT_URLCONF = "{{ project_name }}.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "APP_DIRS": True,
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.debug",
@@ -85,6 +91,11 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "wagtail.contrib.settings.context_processors.settings",
             ],
+            'loaders': [
+                'aratinga.themes.loaders.ThemeLoader',
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
+            ]
         },
     },
 ]
@@ -177,3 +188,13 @@ TAGGIT_CASE_INSENSITIVE = True
 # Sets default for primary key IDs
 # See https://docs.djangoproject.com/en/{{ docs_version }}/ref/models/fields/#bigautofield
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Themes
+
+THEME_PATH = 'themes'
+
+ARATINGA_THEMES = [
+    ('bootstrap', 'Bootstrap 5'),
+    ('govbrds', 'Design System do Governo Federal Brasileiro')
+]
