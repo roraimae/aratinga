@@ -30,9 +30,6 @@ INSTALLED_APPS = [
     # Aratinga
     "aratinga",
     "aratinga.themes",
-    "django_bootstrap5",
-    "django_govbrds",
-    "aratinga_seo",
     "modelcluster",
     "taggit",
     # Wagtail
@@ -195,6 +192,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 THEME_PATH = 'themes'
 
 ARATINGA_THEMES = [
-    ('bootstrap', 'Bootstrap 5'),
-    ('govbrds', 'Design System do Governo Federal Brasileiro')
+    ('default', 'Bootstrap 5'),
 ]
