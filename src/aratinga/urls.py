@@ -8,7 +8,7 @@ from aratinga.settings import cms_settings
 from aratinga.views import robots
 from django.views.generic.base import RedirectView
 
-favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
+favicon_view = RedirectView.as_view(url='/static/images/favicon.ico', permanent=True)
 
 urlpatterns = [
     # Aratinga custom URLs

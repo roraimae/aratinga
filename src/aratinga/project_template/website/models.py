@@ -3,6 +3,7 @@ Create or customize your page models here.
 """
 
 from aratinga.models import AratingaArticlePage, AratingaArticleIndexPage, AratingaWebPage
+from django.utils.translation import gettext_lazy as _
 
 class ArticlePage(AratingaArticlePage):
     """
@@ -10,7 +11,7 @@ class ArticlePage(AratingaArticlePage):
     """
 
     class Meta:
-        verbose_name = "Article"
+        verbose_name = _("Article")
         ordering = ["-first_published_at"]
 
     # Only allow this page to be created beneath an ArticleIndexPage.
@@ -26,7 +27,7 @@ class ArticleIndexPage(AratingaArticleIndexPage):
     """
 
     class Meta:
-        verbose_name = "Article Landing Page"
+        verbose_name = _("Article Landing Page")
 
     # Override to specify custom index ordering choice/default.
     index_query_pagemodel = "website.ArticlePage"
@@ -34,7 +35,7 @@ class ArticleIndexPage(AratingaArticleIndexPage):
     # Only allow ArticlePages beneath this page.
     subpage_types = ["website.ArticlePage"]
 
-    template = "aratinga/pages/article_index_page.html"
+    template = "website/article_index_page.html"
 
 
 class WebPage(AratingaWebPage):
@@ -43,6 +44,6 @@ class WebPage(AratingaWebPage):
     """
 
     class Meta:
-        verbose_name = "Web Page"
+        verbose_name = _("Web Page")
 
-    template = "aratinga/pages/web_page.html"
+    template = "website/web_page.html"

@@ -66,7 +66,7 @@ class AratingaPageMeta(PageBase):
 
 class AratingaTag(TaggedItemBase):
     class Meta:
-        verbose_name = _("CodeRed Tag")
+        verbose_name = _("Aratinga Tag")
 
     content_object = ParentalKey(
         "aratinga.AratingaPage", related_name="tagged_items"
@@ -184,7 +184,7 @@ class AratingaWebPage(AratingaPage):
         verbose_name = _("Aratinga Web Page")
         abstract = True
 
-    template = "aratinga/pages/web_page.html"
+    template = "website/web_page.html"
 
     # Child pages should override based on what blocks they want in the body.
     # Default is LAYOUT_STREAMBLOCKS which is the fullest editor experience.
@@ -226,8 +226,8 @@ class AratingaArticlePage(AratingaWebPage):
         verbose_name = _("Aratinga Article")
         abstract = True
 
-    template = "aratinga/pages/article_page.html"
-    search_template = "aratinga/pages/article_page.search.html"
+    template = "website/article_page.html"
+    search_template = "website/article_page.search.html"
 
     related_show_default = True
 
@@ -273,7 +273,7 @@ class AratingaArticleIndexPage(AratingaWebPage):
         verbose_name = _("Aratinga Article Index Page")
         abstract = True
 
-    template = "aratinga/pages/article_index_page.html"
+    template = "website/article_index_page.html"
 
     index_show_subpages_default = True
 

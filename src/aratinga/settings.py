@@ -18,31 +18,23 @@ class _DefaultSettings:
                 _("Default"),
             ),
             (
-                "aratinga/pages/web_page.html",
+                "website/web_page.html",
                 _("Web page showing title and cover image"),
             ),
             (
-                "aratinga/pages/web_page_notitle.html",
+                "website/web_page_notitle.html",
                 _("Web page without title and cover image"),
             ),
             (
-                "aratinga/pages/home_page.html",
+                "website/home_page.html",
                 _("Home page without title and cover image"),
             ),
             (
-                "aratinga/pages/base.html",
+                "website/base.html",
                 _("Blank page - no navbar or footer"),
             ),
         ],
     }
-
-    CMS_FRONTEND_NAVBAR_COLLAPSE_MODE_CHOICES = []
-    CMS_FRONTEND_NAVBAR_COLOR_SCHEME_CHOICES = []
-    CMS_FRONTEND_NAVBAR_FORMAT_CHOICES = []
-    CMS_FRONTEND_NAVBAR_CLASS_DEFAULT = []
-    CMS_FRONTEND_NAVBAR_COLLAPSE_MODE_DEFAULT = []
-    CMS_FRONTEND_NAVBAR_COLOR_SCHEME_DEFAULT = []
-    CMS_FRONTEND_NAVBAR_FORMAT_DEFAULT = []
 
     CMS_PROTECTED_MEDIA_URL = "/protected/"
     CMS_PROTECTED_MEDIA_ROOT = os.path.join(settings.BASE_DIR, "protected")

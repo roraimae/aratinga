@@ -5,4 +5,4 @@ a single `models` module.
 """
 
 from .page_models import *  # noqa
-from .wagtailsettings_models import *  # noqa
+from .settings_models import *  # noqa
