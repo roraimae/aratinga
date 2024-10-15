@@ -15,6 +15,7 @@ dependencies = [
     "aratinga-seo",
     "django-govbrds",
     "django-bootstrap5>=24.3",
+    "python-dotenv",
 ]
 
 [project.scripts]
@@ -32,4 +33,4 @@ path = "./src/aratinga/__about__.py"
 
 [tool.uv.sources]
 aratinga-seo = { git = "https://github.com/voreios/aratinga-seo", rev = "main" }
-django-govbrds = { git = "https://github.com/roraimae/django-govbrds", rev = "main" }
+django-govbrds = { git = "https://github.com/nathaniel78/django-govbrds", rev = "main" }

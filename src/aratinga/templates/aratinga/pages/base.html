@@ -27,6 +27,15 @@
 
   {% block content_post_body %}{% endblock %}
 
+  {% block header %}
+  <div class="container">
+    {% include "aratinga/fragments/header.html" with formclass="d-flex" formid="filter" %}
+  </div>
+  {% endblock %}
+  
+
+
+
   {% block index_filters %}
   <div class="container">
     {% if page.index_show_subpages and page.index_classifiers.exists %}
