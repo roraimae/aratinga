@@ -13,6 +13,43 @@ from wagtail.contrib.settings.models import register_setting
 from wagtail.images import get_image_model_string
 
 from aratinga.settings import cms_settings
+from wagtail.contrib.settings.models import (
+    BaseGenericSetting,
+    BaseSiteSetting,
+    register_setting,
+)
+
+
+@register_setting(icon="cog")
+class GenericSettings(ClusterableModel, BaseGenericSetting):
+    twitter_url = models.URLField(verbose_name="Twitter URL", blank=True)
+    github_url = models.URLField(verbose_name="GitHub URL", blank=True)
+    organisation_url = models.URLField(verbose_name="Organisation URL", blank=True)
+
+    panels = [
+        MultiFieldPanel(
+            [
+                FieldPanel("github_url"),
+                FieldPanel("twitter_url"),
+                FieldPanel("organisation_url"),
+            ],
+            "Social settings",
+        )
+    ]
+
+
+@register_setting(icon="site")
+class SiteSettings(BaseSiteSetting):
+    title_suffix = models.CharField(
+        verbose_name="Title suffix",
+        max_length=255,
+        help_text="The suffix for the title meta tag e.g. ' | The Wagtail Bakery'",
+        default="The Wagtail Bakery",
+    )
+
+    panels = [
+        FieldPanel("title_suffix"),
+    ]
 
 
 def conditional_register_setting(condition: bool, **kwargs):
@@ -51,58 +88,7 @@ class LayoutSettings(ClusterableModel, BaseSiteSetting):
         related_name="favicon",
         verbose_name=_("Favicon"),
     )
-    navbar_color_scheme = models.CharField(
-        blank=True,
-        max_length=50,
-        choices=None,
-        default="",
-        verbose_name=_("Navbar color scheme"),
-        help_text=_(
-            "Optimizes text and other navbar elements for use with light or "
-            "dark backgrounds."
-        ),
-    )
-    navbar_class = models.CharField(
-        blank=True,
-        max_length=255,
-        default="",
-        verbose_name=_("Navbar CSS class"),
-        help_text=_(
-            'Custom classes applied to navbar e.g. "bg-light", "bg-dark", "bg-primary".'
-        ),
-    )
-    navbar_fixed = models.BooleanField(
-        default=False,
-        verbose_name=_("Fixed navbar"),
-        help_text=_("Fixed navbar will remain at the top of the page when scrolling."),
-    )
-    navbar_content_fluid = models.BooleanField(
-        default=False,
-        verbose_name=_("Full width navbar contents"),
-        help_text=_("Content within the navbar will fill edge to edge."),
-    )
-    navbar_collapse_mode = models.CharField(
-        blank=True,
-        max_length=50,
-        choices=None,
-        default="",
-        verbose_name=_("Collapse navbar menu"),
-        help_text=_(
-            "Control on what screen sizes to show and collapse the navbar menu links."
-        ),
-    )
-    navbar_format = models.CharField(
-        blank=True,
-        max_length=50,
-        choices=None,
-        default="",
-        verbose_name=_("Navbar format"),
-    )
-    navbar_search = models.BooleanField(
-        default=True,
-        verbose_name=_("Search box"),
-        help_text=_("Show search box in navbar"),
-    )
+
     from_email_address = models.CharField(
         blank=True,
         max_length=255,
@@ -140,23 +126,4 @@ class LayoutSettings(ClusterableModel, BaseSiteSetting):
         to enable customization of settings without causing migration issues.
         """
         super().__init__(*args, **kwargs)
-        # Set choices dynamically.
-        self._meta.get_field(
-            "navbar_collapse_mode"
-        ).choices = cms_settings.CMS_FRONTEND_NAVBAR_COLLAPSE_MODE_CHOICES
-        self._meta.get_field(
-            "navbar_color_scheme"
-        ).choices = cms_settings.CMS_FRONTEND_NAVBAR_COLOR_SCHEME_CHOICES
-        self._meta.get_field(
-            "navbar_format"
-        ).choices = cms_settings.CMS_FRONTEND_NAVBAR_FORMAT_CHOICES
-        # Set default dynamically.
-        if not self.id:
-            self.navbar_class = cms_settings.CMS_FRONTEND_NAVBAR_CLASS_DEFAULT
-            self.navbar_collapse_mode = (
-                cms_settings.CMS_FRONTEND_NAVBAR_COLLAPSE_MODE_DEFAULT
-            )
-            self.navbar_color_scheme = (
-                cms_settings.CMS_FRONTEND_NAVBAR_COLOR_SCHEME_DEFAULT
-            )
-            self.navbar_format = cms_settings.CMS_FRONTEND_NAVBAR_FORMAT_DEFAULT
+      
