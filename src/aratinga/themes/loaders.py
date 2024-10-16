@@ -3,7 +3,7 @@ import os
 from django.conf import settings
 from django.template.loaders.filesystem import Loader as BaseLoader
 
-from aratinga.themes.thread import get_theme
+from .thread import get_theme
 
 
 class ThemeLoader(BaseLoader):

@@ -20,56 +20,11 @@ from wagtail.contrib.settings.models import (
 )
 
 
-@register_setting(icon="cog")
 class GenericSettings(ClusterableModel, BaseGenericSetting):
-    twitter_url = models.URLField(verbose_name="Twitter URL", blank=True)
-    github_url = models.URLField(verbose_name="GitHub URL", blank=True)
-    organisation_url = models.URLField(verbose_name="Organisation URL", blank=True)
 
-    panels = [
-        MultiFieldPanel(
-            [
-                FieldPanel("github_url"),
-                FieldPanel("twitter_url"),
-                FieldPanel("organisation_url"),
-            ],
-            "Social settings",
-        )
-    ]
-
-
-@register_setting(icon="site")
-class SiteSettings(BaseSiteSetting):
-    title_suffix = models.CharField(
-        verbose_name="Title suffix",
-        max_length=255,
-        help_text="The suffix for the title meta tag e.g. ' | The Wagtail Bakery'",
-        default="The Wagtail Bakery",
-    )
-
-    panels = [
-        FieldPanel("title_suffix"),
-    ]
-
-
-def conditional_register_setting(condition: bool, **kwargs):
-    
-    def decorator(cls):
-        if not condition:
-            register_setting(cls, **kwargs)
-        return cls
-
-    return decorator
-
-
-@conditional_register_setting(cms_settings.CMS_DISABLE_LAYOUT, icon="cms-desktop")
-class LayoutSettings(ClusterableModel, BaseSiteSetting):
     """
-    Branding, navbar, and theme settings.
+        Branding
     """
-
-    class Meta:
-        verbose_name = _("CMS Settings")
 
     logo = models.ForeignKey(
         get_image_model_string(),
@@ -88,6 +43,25 @@ class LayoutSettings(ClusterableModel, BaseSiteSetting):
         related_name="favicon",
         verbose_name=_("Favicon"),
     )
+
+    title_suffix = models.CharField(
+        verbose_name="Title suffix",
+        max_length=255,
+        help_text="The suffix for the title meta tag e.g. ' | The Wagtail Bakery'",
+        default="The Wagtail Bakery",
+    )
+
+
+@register_setting(icon="cogs")
+class SiteSettings(GenericSettings, BaseSiteSetting):
+    """
+    Branding, navbar, and theme settings.
+    """
+
+    class Meta:
+        verbose_name = _("CMS Settings")
+
+    
 
     from_email_address = models.CharField(
         blank=True,

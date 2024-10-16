@@ -20,7 +20,7 @@ from aratinga.forms import SearchForm
 from aratinga.importexport import ImportPagesFromCSVFileForm
 
 from aratinga.templatetags.aratinga_tags import get_name_of_class
-from aratinga.models import LayoutSettings
+from aratinga.models import SiteSettings
 
 
 @login_required
@@ -75,7 +75,7 @@ def search(request):
         if results:
             results = results.search(search_query)
             paginator = Paginator(
-                results, LayoutSettings.for_request(request).search_num_results
+                results, SiteSettings.for_request(request).search_num_results
             )
             page = request.GET.get("p", 1)
             try:

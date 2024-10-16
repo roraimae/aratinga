@@ -1,5 +1,5 @@
 from wagtail import blocks
-from aratinga.settings import cms_settings
+from aratinga.admin.settings import cms_settings
 
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe

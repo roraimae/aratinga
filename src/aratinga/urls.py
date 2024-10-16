@@ -4,7 +4,6 @@ from django.urls import re_path
 from wagtail import urls as wagtailcore_urls
 from wagtail.contrib.sitemaps.views import sitemap
 
-from aratinga.settings import cms_settings
 from aratinga.views import robots
 from django.views.generic.base import RedirectView
 
@@ -17,4 +16,5 @@ urlpatterns = [
     re_path(r'^favicon\.ico$', favicon_view),
     # Wagtail
     path("", include(wagtailcore_urls)),
+    # outras URLs
 ]

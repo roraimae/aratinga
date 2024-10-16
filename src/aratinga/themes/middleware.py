@@ -1,8 +1,8 @@
 from django.core.exceptions import ImproperlyConfigured
 from wagtail.models import Site
 
-from aratinga.themes.settings import ThemeSettings
-from aratinga.themes.thread import set_theme
+from .settings import ThemeSettings
+from .thread import set_theme
 
 
 from django.conf import settings
@@ -19,16 +19,14 @@ class ThemeMiddleware:
         if site is None:
             raise ImproperlyConfigured("Site not found!")
 
-        theme_settings = ThemeSettings.for_site(site)
-        theme = theme_settings.theme
-
-        if theme is not None:
-            try:
-                active_theme = Theme.objects.get(active=True)
+        # Obter o tema ativo para o site
+        try:
+            theme_settings = ThemeSettings.for_site(site)
+            if theme_settings.is_active:
+                active_theme = theme_settings
                 settings.TEMPLATES[0]['DIRS'] = [f'themes/{active_theme.name}']
-            except Theme.DoesNotExist:
-                pass
-            set_theme(theme)
+        except ThemeSettings.DoesNotExist:
+            pass
 
         response = self.get_response(request)
         return response

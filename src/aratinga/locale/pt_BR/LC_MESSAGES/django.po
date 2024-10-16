@@ -1,0 +1,282 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-16 09:05-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: src/aratinga/blocks/base_blocks.py:68 src/aratinga/models/page_models.py:158
+msgid "Content"
+msgstr ""
+
+#: src/aratinga/blocks/layout_blocks.py:27
+msgid "Column size"
+msgstr ""
+
+#: src/aratinga/blocks/layout_blocks.py:44
+#: src/aratinga/blocks/layout_blocks.py:63
+#: src/aratinga/blocks/layout_blocks.py:80
+msgid "Full width"
+msgstr ""
+
+#: src/aratinga/blocks/layout_blocks.py:50
+msgid "Responsive Grid Row"
+msgstr ""
+
+#: src/aratinga/blocks/layout_blocks.py:69
+msgid "Card Grid"
+msgstr ""
+
+#: src/aratinga/blocks/layout_blocks.py:84
+msgid "Parallax Effect"
+msgstr ""
+
+#: src/aratinga/blocks/layout_blocks.py:86
+msgid ""
+"Background images scroll slower than foreground images, creating an illusion "
+"of depth."
+msgstr ""
+
+#: src/aratinga/blocks/layout_blocks.py:93
+msgid "Tile background image"
+msgstr ""
+
+#: src/aratinga/blocks/layout_blocks.py:98
+msgid "Background color"
+msgstr ""
+
+#: src/aratinga/blocks/layout_blocks.py:99
+#: src/aratinga/blocks/layout_blocks.py:105
+msgid "Hexadecimal, rgba, or CSS color notation (e.g. #ff0011)"
+msgstr ""
+
+#: src/aratinga/blocks/layout_blocks.py:104
+msgid "Text color"
+msgstr ""
+
+#: src/aratinga/forms.py:14
+msgid "Search"
+msgstr ""
+
+#: src/aratinga/forms.py:20
+msgid "Page type"
+msgstr ""
+
+#: src/aratinga/importexport.py:17
+msgid "File to import"
+msgstr ""
+
+#: src/aratinga/importexport.py:22
+msgid "Destination parent page"
+msgstr ""
+
+#: src/aratinga/importexport.py:23
+msgid "Imported pages will be created as children of this page."
+msgstr ""
+
+#: src/aratinga/models/page_models.py:69
+msgid "Aratinga Tag"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:83
+msgid "Aratinga Page"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:92
+msgid "Default Ordering"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:93
+msgid "Date first published, newest to oldest"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:94
+msgid "Date first published, oldest to newest"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:95
+msgid "Date updated, newest to oldest"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:96
+msgid "Date updated, oldest to newest"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:97
+msgid "Title, alphabetical"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:98
+msgid "Title, reverse alphabetical"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:106
+msgid "Order child pages by"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:107
+msgid "Child pages will then be sorted by this attribute."
+msgstr ""
+
+#: src/aratinga/models/page_models.py:115
+msgid "Template"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:160
+msgid "Layout"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:162
+msgid "Settings"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:184
+msgid "Aratinga Web Page"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:226
+msgid "Aratinga Article"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:245
+msgid "Caption"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:253
+msgid "Author"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:258
+msgid "Display author as"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:259
+msgid "Override how the author’s name displays on this article."
+msgstr ""
+
+#: src/aratinga/models/page_models.py:264
+msgid "Display publish date"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:273
+msgid "Aratinga Article Index Page"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:287
+msgid "Show images"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:294
+msgid "Show author and date info"
+msgstr ""
+
+#: src/aratinga/models/page_models.py:298
+msgid "Show preview text"
+msgstr ""
+
+#: src/aratinga/models/settings_models.py:72
+msgid "CMS Settings"
+msgstr ""
+
+#: src/aratinga/models/settings_models.py:80
+msgid "Logo"
+msgstr ""
+
+#: src/aratinga/models/settings_models.py:81
+msgid "Brand logo used in the navbar and throughout the site"
+msgstr ""
+
+#: src/aratinga/models/settings_models.py:89
+msgid "Favicon"
+msgstr ""
+
+#: src/aratinga/models/settings_models.py:95
+msgid "From email address"
+msgstr ""
+
+#: src/aratinga/models/settings_models.py:97
+msgid ""
+"The default email address this site appears to send from. For example: "
+"\"sender@example.com\" or \"Sender Name <sender@example.com>\" (without "
+"quotes)"
+msgstr ""
+
+#: src/aratinga/models/settings_models.py:104
+msgid "Number of results per page"
+msgstr ""
+
+#: src/aratinga/models/settings_models.py:107
+msgid "Open all external links in new tab"
+msgstr ""
+
+#: src/aratinga/models/settings_models.py:112
+msgid "Google Maps API Key"
+msgstr ""
+
+#: src/aratinga/models/settings_models.py:113
+msgid "The API Key used for Google Maps."
+msgstr ""
+
+#: src/aratinga/models/settings_models.py:118
+msgid "Mailchimp API Key"
+msgstr ""
+
+#: src/aratinga/models/settings_models.py:119
+msgid "The API Key used for Mailchimp."
+msgstr ""
+
+#: src/aratinga/project_template/project_name/settings/base.py:143
+msgid "English"
+msgstr ""
+
+#: src/aratinga/project_template/project_name/settings/base.py:144
+msgid "Portuguese (Brazil)"
+msgstr ""
+
+#: src/aratinga/project_template/website/models.py:14
+msgid "Article"
+msgstr ""
+
+#: src/aratinga/project_template/website/models.py:30
+msgid "Article Landing Page"
+msgstr ""
+
+#: src/aratinga/project_template/website/models.py:47
+msgid "Web Page"
+msgstr ""
+
+#: src/aratinga/settings.py:18
+msgid "Default"
+msgstr ""
+
+#: src/aratinga/settings.py:22
+msgid "Web page showing title and cover image"
+msgstr ""
+
+#: src/aratinga/settings.py:26
+msgid "Web page without title and cover image"
+msgstr ""
+
+#: src/aratinga/settings.py:30
+msgid "Home page without title and cover image"
+msgstr ""
+
+#: src/aratinga/settings.py:34
+msgid "Blank page - no navbar or footer"
+msgstr ""
+
+#: src/aratinga/themes/settings.py:30 src/aratinga/themes/settings.py:31
+msgid "themes"
+msgstr ""

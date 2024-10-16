@@ -12,15 +12,13 @@ https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 
 import os
 from pathlib import Path
-
-
-# Build paths inside the project like this: BASE_DIR / "subdir".
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
-
+from django.utils.translation import gettext_lazy as _
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/{{ docs_version }}/howto/deployment/checklist/
 
+# Build paths inside the project like this: BASE_DIR / "subdir".
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Application definition
 
@@ -68,8 +66,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     # CMS functionality
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
-    # CMS Themes
-    'aratinga.themes.middleware.ThemeMiddleware',
+
 ]
 
 ROOT_URLCONF = "{{ project_name }}.urls"
@@ -89,7 +86,6 @@ TEMPLATES = [
                 "wagtail.contrib.settings.context_processors.settings",
             ],
             'loaders': [
-                'aratinga.themes.loaders.ThemeLoader',
                 'django.template.loaders.filesystem.Loader',
                 'django.template.loaders.app_directories.Loader',
             ]
@@ -137,7 +133,16 @@ LANGUAGE_CODE = "pt-br"
 
 TIME_ZONE = "America/Boa_Vista"
 
-USE_I18N = False
+USE_I18N = True
+
+LANGUAGES = [
+    ('en', _('English')),
+    ('pt-br', _('Portuguese (Brazil)')),
+]
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
 
 USE_TZ = True
 
@@ -185,12 +190,3 @@ TAGGIT_CASE_INSENSITIVE = True
 # Sets default for primary key IDs
 # See https://docs.djangoproject.com/en/{{ docs_version }}/ref/models/fields/#bigautofield
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-
-# Themes
-
-THEME_PATH = 'themes'
-
-ARATINGA_THEMES = [
-    ('default', 'Bootstrap 5'),
-]
