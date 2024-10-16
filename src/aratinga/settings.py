@@ -2,12 +2,15 @@ import os
 from django.apps import apps
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
+from django.conf import settings
 
 class _DefaultSettings:
     CMS_THEME = "Bootstrap"
     CMS_DISABLE_LAYOUT = False
     CMS_DISABLE_NAVBAR = False
     CMS_DISABLE_FOOTER = False
+    
+    THEMES_PATH = os.path.join(settings.BASE_DIR, 'themes')
 
 
     CMS_FRONTEND_TEMPLATES_PAGES = {

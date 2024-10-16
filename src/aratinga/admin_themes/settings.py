@@ -6,6 +6,9 @@ from django.utils.translation import gettext as _
 from wagtail import VERSION as WAGTAIL_VERSION
 from wagtail.admin.panels import FieldPanel
 from wagtail.contrib.settings.models import register_setting
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
+from .forms import ThemeForm
 
 if WAGTAIL_VERSION < (4, 0):
     from wagtail.contrib.settings.models import BaseSetting
@@ -14,17 +17,21 @@ else:
 
 __ALL__ = ["ThemeSettings"]
 
+theme_storage = FileSystemStorage(settings.BASE_DIR)
 
-@register_setting
+@register_setting(icon='folder-open-inverse')
 class ThemeSettings(BaseSetting):
-    ARATINGA_THEMES = getattr(settings, "ARATINGA_THEMES")
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    zip_file = models.FileField(upload_to='themes/', storage=theme_storage)
+    active = models.BooleanField(default=False)
 
-    id = models.AutoField(
-        auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
-    )
-    theme = models.CharField(blank=True, max_length=255, null=True)
-
-    panels = [FieldPanel("theme", widget=forms.Select(choices=ARATINGA_THEMES))]
+    panels = [
+        FieldPanel('name'),
+        FieldPanel('description'),
+        FieldPanel('zip_file'),
+        FieldPanel('active'),
+    ]
 
     class Meta:
         verbose_name = _("themes")
@@ -32,3 +39,4 @@ class ThemeSettings(BaseSetting):
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+

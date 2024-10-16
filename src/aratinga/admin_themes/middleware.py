@@ -1,8 +1,8 @@
 from django.core.exceptions import ImproperlyConfigured
 from wagtail.models import Site
 
-from aratinga.themes.settings import ThemeSettings
-from aratinga.themes.thread import set_theme
+from .settings import ThemeSettings
+from .thread import set_theme
 
 
 from django.conf import settings

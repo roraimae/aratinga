@@ -1,0 +1,10 @@
+{% extends "wagtailadmin/base.html" %}
+
+{% block content %}
+  <h1>Gerenciador de Temas</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+  </form>
+{% endblock %}
