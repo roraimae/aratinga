@@ -52,7 +52,7 @@ class GenericSettings(ClusterableModel, BaseGenericSetting):
     )
 
 
-@register_setting(icon="site")
+@register_setting(icon="cogs")
 class SiteSettings(GenericSettings, BaseSiteSetting):
     """
     Branding, navbar, and theme settings.

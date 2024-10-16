@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     "website",
     # Aratinga
     "aratinga",
-    "aratinga.admin_themes",
+    "aratinga.themes",
     "modelcluster",
     "taggit",
     # Wagtail
@@ -66,8 +66,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     # CMS functionality
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
-    # CMS Themes
-    'aratinga.admin_themes.middleware.ThemeMiddleware',
+
 ]
 
 ROOT_URLCONF = "{{ project_name }}.urls"
@@ -87,7 +86,6 @@ TEMPLATES = [
                 "wagtail.contrib.settings.context_processors.settings",
             ],
             'loaders': [
-                'aratinga.admin_themes.loaders.ThemeLoader',
                 'django.template.loaders.filesystem.Loader',
                 'django.template.loaders.app_directories.Loader',
             ]
@@ -192,12 +190,3 @@ TAGGIT_CASE_INSENSITIVE = True
 # Sets default for primary key IDs
 # See https://docs.djangoproject.com/en/{{ docs_version }}/ref/models/fields/#bigautofield
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-
-# Themes
-
-THEME_PATH = 'themes'
-
-ARATINGA_THEMES = [
-    ('default', 'Bootstrap 5'),
-]

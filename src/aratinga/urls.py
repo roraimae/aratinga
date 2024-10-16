@@ -16,4 +16,5 @@ urlpatterns = [
     re_path(r'^favicon\.ico$', favicon_view),
     # Wagtail
     path("", include(wagtailcore_urls)),
+    # outras URLs
 ]

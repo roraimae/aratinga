@@ -7,4 +7,13 @@
     {{ form.as_p }}
     <button type="submit">Salvar</button>
   </form>
+
+  <h2>Temas Cadastrados</h2>
+  <ul>
+    {% for theme in themes %}
+    <li>{{ theme.name }} - {% if theme.is_active %}Ativo{% else %}Inativo{% endif %}
+        <a href="{% url 'desinstalar_tema' theme.id %}">Desinstalar</a>
+    </li>
+    {% endfor %}
+
 {% endblock %}

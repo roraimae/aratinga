@@ -4,11 +4,13 @@ from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext as _
 from wagtail import VERSION as WAGTAIL_VERSION
+from wagtail.models import Site
 from wagtail.admin.panels import FieldPanel
 from wagtail.contrib.settings.models import register_setting
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 from .forms import ThemeForm
+from .models import Theme
 
 if WAGTAIL_VERSION < (4, 0):
     from wagtail.contrib.settings.models import BaseSetting
@@ -19,19 +21,10 @@ __ALL__ = ["ThemeSettings"]
 
 theme_storage = FileSystemStorage(settings.BASE_DIR)
 
-@register_setting(icon='folder-open-inverse')
+@register_setting(icon='view')
 class ThemeSettings(BaseSetting):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    zip_file = models.FileField(upload_to='themes/', storage=theme_storage)
-    active = models.BooleanField(default=False)
-
-    panels = [
-        FieldPanel('name'),
-        FieldPanel('description'),
-        FieldPanel('zip_file'),
-        FieldPanel('active'),
-    ]
+    
+    themes = Theme
 
     class Meta:
         verbose_name = _("themes")
@@ -40,3 +33,5 @@ class ThemeSettings(BaseSetting):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+    def list_themes(self):
+        return Theme.objects.all()
