@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 from wagtail import blocks
 from wagtail.images.blocks import ImageChooserBlock
 
-from aratinga.admin.settings import cms_settings
+from aratinga.settings import cms_settings
 
 from .base_blocks import BaseLayoutBlock
 
@@ -29,7 +29,7 @@ class ColumnBlock(BaseLayoutBlock):
 
 
     class Meta:
-        template = "blocks/column_block.html"
+        template = "aratinga/blocks/column_block.html"
         icon = "placeholder"
         label = "Column"
 
@@ -45,7 +45,7 @@ class GridBlock(BaseLayoutBlock):
     )
 
     class Meta:
-        template = "blocks/grid_block.html"
+        template = "aratinga/blocks/grid_block.html"
         icon = "cr-columns"
         label = _("Responsive Grid Row")
 
@@ -64,7 +64,7 @@ class CardGridBlock(BaseLayoutBlock):
     )
 
     class Meta:
-        template = "blocks/cardgrid_deck.html"
+        template = "aratinga/blocks/cardgrid_deck.html"
         icon = "cr-th-large"
         label = _("Card Grid")
 
@@ -106,6 +106,6 @@ class HeroBlock(BaseLayoutBlock):
     )
 
     class Meta:
-        template = "blocks/hero_block.html"
+        template = "aratinga/blocks/hero_block.html"
         icon = "cr-newspaper-o"
         label = "Hero Unit"

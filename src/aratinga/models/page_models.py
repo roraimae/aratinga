@@ -184,7 +184,7 @@ class AratingaWebPage(AratingaPage):
         verbose_name = _("Aratinga Web Page")
         abstract = True
 
-    template = "website/web_page.html"
+    template = "aratinga/pages/web_page.html"
 
     # Child pages should override based on what blocks they want in the body.
     # Default is LAYOUT_STREAMBLOCKS which is the fullest editor experience.

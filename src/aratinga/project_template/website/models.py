@@ -35,7 +35,7 @@ class ArticleIndexPage(AratingaArticleIndexPage):
     # Only allow ArticlePages beneath this page.
     subpage_types = ["website.ArticlePage"]
 
-    template = "website/article_index_page.html"
+    template = "aratinga/pages/article_index_page.html"
 
 
 class WebPage(AratingaWebPage):
@@ -46,4 +46,4 @@ class WebPage(AratingaWebPage):
     class Meta:
         verbose_name = _("Web Page")
 
-    template = "website/web_page.html"
+    template = "aratinga/pages/web_page.html"

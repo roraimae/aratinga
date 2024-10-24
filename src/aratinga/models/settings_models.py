@@ -47,8 +47,8 @@ class GenericSettings(ClusterableModel, BaseGenericSetting):
     title_suffix = models.CharField(
         verbose_name="Title suffix",
         max_length=255,
-        help_text="The suffix for the title meta tag e.g. ' | The Wagtail Bakery'",
-        default="The Wagtail Bakery",
+        help_text="The suffix for the title meta tag e.g. ' | Federal Institute'",
+        default="Federal Institute",
     )
 
 
