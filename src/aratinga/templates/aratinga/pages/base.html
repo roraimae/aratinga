@@ -32,7 +32,7 @@
         {% wagtailuserbar %}
 
         {% block header %}
-            {% include "includes/header.html" %}
+            {% include "aratinga/includes/header.html" %}
         {% endblock header %}
 
         {% block breadcrumbs %}
@@ -43,7 +43,7 @@
 
         <main id="main-content">
             {% block messages %}
-                {% include "includes/messages.html" %}
+                {% include "aratinga/includes/messages.html" %}
             {% endblock messages %}
 
             {% block content %}
@@ -52,7 +52,7 @@
 
         <hr>
 
-        {% include "includes/footer.html" %}
+        {% include "aratinga/includes/footer.html" %}
 
         <script type="module" src="{% static 'js/main.js' %}"></script>
     </body>

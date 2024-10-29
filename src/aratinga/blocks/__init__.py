@@ -30,7 +30,7 @@ from .layout_blocks import HeroBlock
 # Collections of blocks commonly used together.
 
 HTML_STREAMBLOCKS = [
-    ("text", RichTextBlock(icon="cr-font")),
+    ("text", RichTextBlock(icon="ara-font")),
     ("button", ButtonBlock()),
     ("image", ImageBlock()),
     ("image_link", ImageLinkBlock()),
@@ -57,29 +57,6 @@ CONTENT_STREAMBLOCKS = HTML_STREAMBLOCKS + [
 ]
 
 LAYOUT_STREAMBLOCKS = [
-    (
-        "hero",
-        HeroBlock(
-            [
-                ("row", GridBlock(CONTENT_STREAMBLOCKS)),
-                (
-                    "cardgrid",
-                    CardGridBlock(
-                        [
-                            ("card", CardBlock()),
-                        ]
-                    ),
-                ),
-                (
-                    "html",
-                    blocks.RawHTMLBlock(
-                        icon="code", form_classname="monospace", label=_("HTML")
-                    ),
-                ),
-            ]
-        ),
-    ),
-    ("row", GridBlock(CONTENT_STREAMBLOCKS)),
     (
         "cardgrid",
         CardGridBlock(

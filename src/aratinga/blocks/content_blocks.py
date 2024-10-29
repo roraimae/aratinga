@@ -45,7 +45,7 @@ class CardBlock(BaseBlock):
 
     class Meta:
         template = "aratinga/blocks/card_foot.html"
-        icon = "cr-list-alt"
+        icon = "ara-list-alt"
         label = _("Card")
 
 

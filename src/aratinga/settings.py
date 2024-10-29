@@ -40,6 +40,33 @@ class _DefaultSettings:
         ("btn-outline-dark", "Outline Dark"),
     ]
 
+    
+    CMS_FRONTEND_COL_SIZE_DEFAULT = ""
+    CMS_FRONTEND_COL_SIZE_CHOICES = [
+        ("", "Automatically size"),
+        ("12", "Full row"),
+        ("6", "Half - 1/2 column"),
+        ("4", "Thirds - 1/3 column"),
+        ("8", "Thirds - 2/3 column"),
+        ("3", "Quarters - 1/4 column"),
+        ("9", "Quarters - 3/4 column"),
+        ("2", "Sixths - 1/6 column"),
+        ("10", "Sixths - 5/6 column"),
+        ("1", "Twelfths - 1/12 column"),
+        ("5", "Twelfths - 5/12 column"),
+        ("7", "Twelfths - 7/12 column"),
+        ("11", "Twelfths - 11/12 column"),
+    ]
+
+
+    CMS_FRONTEND_COL_BREAK_DEFAULT = "md"
+    CMS_FRONTEND_COL_BREAK_CHOICES = [
+        ("", "Always expanded"),
+        ("sm", "sm - Expand on small screens (phone, 576px) and larger"),
+        ("md", "md - Expand on medium screens (tablet, 768px) and larger"),
+        ("lg", "lg - Expand on large screens (laptop, 992px) and larger"),
+        ("xl", "xl - Expand on extra large screens (wide monitor, 1200px)"),
+    ]
 
     CMS_FRONTEND_TEMPLATES_PAGES = {
         # templates that are available for all page types
@@ -155,5 +182,14 @@ class _DefaultSettings:
             ),
         ],
     }
+
+    def __getattribute__(self, attr: str):
+        # First load from Django settings.
+        # If it does not exist, load from _DefaultSettings.
+        try:
+            return getattr(settings, attr)
+        except AttributeError:
+            return super().__getattribute__(attr)
+
 
 cms_settings = _DefaultSettings()

@@ -46,7 +46,7 @@ class GridBlock(BaseLayoutBlock):
 
     class Meta:
         template = "aratinga/blocks/grid_block.html"
-        icon = "cr-columns"
+        icon = "ara-columns"
         label = _("Responsive Grid Row")
 
     def __init__(self, local_blocks=None, **kwargs):
@@ -65,7 +65,7 @@ class CardGridBlock(BaseLayoutBlock):
 
     class Meta:
         template = "aratinga/blocks/cardgrid_deck.html"
-        icon = "cr-th-large"
+        icon = "ara-th-large"
         label = _("Card Grid")
 
 
@@ -107,5 +107,5 @@ class HeroBlock(BaseLayoutBlock):
 
     class Meta:
         template = "aratinga/blocks/hero_block.html"
-        icon = "cr-newspaper-o"
+        icon = "ara-newspaper-o"
         label = "Hero Unit"
