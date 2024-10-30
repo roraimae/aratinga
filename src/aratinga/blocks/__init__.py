@@ -24,8 +24,6 @@ from .html_blocks import RichTextBlock
 from .html_blocks import TableBlock
 
 from .layout_blocks import CardGridBlock
-from .layout_blocks import GridBlock
-from .layout_blocks import HeroBlock
 
 # Collections of blocks commonly used together.
 
