@@ -1,6 +1,5 @@
 import os
 import zipfile
-import shutil
 from django import forms
 from .models import Theme
 from django.conf import settings

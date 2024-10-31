@@ -2,11 +2,9 @@ from django.core.exceptions import ImproperlyConfigured
 from wagtail.models import Site
 
 from .settings import ThemeSettings
-from .thread import set_theme
 
 
 from django.conf import settings
-from .models import Theme
 
 
 class ThemeMiddleware:

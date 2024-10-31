@@ -1,15 +1,8 @@
-from django import forms
-from django.apps import apps
 from django.conf import settings
-from django.db import models
 from django.utils.translation import gettext as _
 from wagtail import VERSION as WAGTAIL_VERSION
-from wagtail.models import Site
-from wagtail.admin.panels import FieldPanel
 from wagtail.contrib.settings.models import register_setting
 from django.core.files.storage import FileSystemStorage
-from django.conf import settings
-from .forms import ThemeForm
 from .models import Theme
 
 if WAGTAIL_VERSION < (4, 0):

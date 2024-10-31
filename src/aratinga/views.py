@@ -1,6 +1,5 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import permission_required
-from django.views.decorators.http import require_POST
 
 from django.core.paginator import EmptyPage
 from django.core.paginator import InvalidPage
@@ -17,7 +16,6 @@ from wagtail.search.backends.database.mysql.mysql import MySQLSearchBackend
 
 
 from aratinga.forms import SearchForm
-from aratinga.importexport import ImportPagesFromCSVFileForm
 
 from aratinga.templatetags.aratinga_tags import get_name_of_class
 from aratinga.models import SiteSettings

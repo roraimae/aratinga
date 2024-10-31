@@ -2,28 +2,11 @@
 Base and abstract pages used in Aratinga.
 """
 
-import json
-import logging
-import os
-import warnings
-from datetime import date
-from datetime import datetime
-from pathlib import Path
-from typing import TYPE_CHECKING
-from typing import Dict
-from typing import List
-from typing import Optional
-from typing import Tuple
-from typing import Union
 
-from django import forms
 from django.conf import settings
 
 from django.db import models
 
-from typing import TYPE_CHECKING
-
-from django.utils import timezone
 from django.utils.html import strip_tags
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
@@ -37,7 +20,6 @@ from wagtail.models import PageBase
 from wagtail.search import index
 from wagtail.fields import StreamField
 from wagtail.admin.panels import FieldPanel
-from wagtail.admin.panels import MultiFieldPanel
 from wagtail.admin.panels import ObjectList
 from wagtail.admin.panels import TabbedInterface
 from wagtail.utils.decorators import cached_classmethod
@@ -45,10 +27,6 @@ from wagtail.utils.decorators import cached_classmethod
 from aratinga.settings import cms_settings
 from aratinga.blocks import CONTENT_STREAMBLOCKS
 from aratinga.blocks import LAYOUT_STREAMBLOCKS
-from aratinga.blocks import STREAMFORM_BLOCKS
-
-if TYPE_CHECKING:
-    from wagtail.images.models import AbstractImage
 
 
 CMS_PAGE_MODELS = []
@@ -184,7 +162,7 @@ class AratingaWebPage(AratingaPage):
         verbose_name = _("Aratinga Web Page")
         abstract = True
 
-    template = "website/web_page.html"
+    template = "aratinga/pages/web_page.html"
 
     # Child pages should override based on what blocks they want in the body.
     # Default is LAYOUT_STREAMBLOCKS which is the fullest editor experience.

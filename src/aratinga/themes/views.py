@@ -1,12 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from .models import Theme
 from wagtail.admin.viewsets.model import ModelViewSet
-from .models import Theme
 from django.utils.translation import gettext_lazy as _
 
 from wagtail.admin.ui.tables import Column, StatusFlagColumn, TitleColumn
 from wagtail.admin.views import generic
-from wagtail.admin.viewsets.model import ModelViewSet
 from wagtail.permissions import site_permission_policy
 from .forms import ThemeForm
 

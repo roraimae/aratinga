@@ -1,6 +1,8 @@
 {% extends "wagtailadmin/login.html" %}
+{% load i18n wagtailadmin_tags %}
 {% load static %}
 
+{% block branding_login %}{% trans "Sign in to Aratinga" %}{% endblock %}
 {% block branding_logo %}
     <img src="{% static 'images/aratinga.svg' %}" style="margin: 10px auto;" alt="Aratinga CMS" />
 {% endblock %}
