@@ -3,13 +3,13 @@
 {% block block_render %}
 {% with value=self.film_strip %}
 <div class="position-relative" data-block="film-strip" data-current-block='0'>
-  <div class="crx-filmstrip-container" data-block="film-container">
+  <div class="cms-filmstrip-container" data-block="film-container">
     <div class="row g-0 flex-nowrap" data-block="film-row">
       {% for panel in value.film_panels.all %}
         {% image panel.background_image original as image %}
         <div 
           data-block="film-panel" 
-          class="col-auto col crx-filmstrip-panel {{panel.custom_css_class}}" 
+          class="col-auto col cms-filmstrip-panel {{panel.custom_css_class}}" 
           {% if panel.custom_id %}id="{{panel.custom_id}}"{% endif %} 
           style="
             {% if image %}background-image: url({{image.url}}); background-size: cover; background-position: center;{% endif %}
