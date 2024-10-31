@@ -204,8 +204,8 @@ class AratingaArticlePage(AratingaWebPage):
         verbose_name = _("Aratinga Article")
         abstract = True
 
-    template = "website/article_page.html"
-    search_template = "website/article_page.search.html"
+    template = "aratinga/pages/article_page.html"
+    search_template = "aratinga/pages/article_page.search.html"
 
     related_show_default = True
 
@@ -251,7 +251,7 @@ class AratingaArticleIndexPage(AratingaWebPage):
         verbose_name = _("Aratinga Article Index Page")
         abstract = True
 
-    template = "website/article_index_page.html"
+    template = "aratinga/pages/article_index_page.html"
 
     index_show_subpages_default = True
 
