@@ -22,7 +22,7 @@ class SearchForm(forms.Form):
 
 def get_page_model_choices():
     """
-    Returns a list of tuples of all creatable Codered pages
+    Returns a list of tuples of all creatable Arainga pages
     in the format of (app_label:model, "Verbose Name")
     """
     from aratinga.models import get_page_models

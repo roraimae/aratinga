@@ -11,7 +11,9 @@ from django.utils.html import strip_tags
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 
+from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
+from modelcluster.fields import ParentalManyToManyField
 
 from taggit.models import TaggedItemBase
 
@@ -22,11 +24,15 @@ from wagtail.fields import StreamField
 from wagtail.admin.panels import FieldPanel
 from wagtail.admin.panels import ObjectList
 from wagtail.admin.panels import TabbedInterface
+from wagtail.admin.panels import MultiFieldPanel
 from wagtail.utils.decorators import cached_classmethod
+
 
 from aratinga.settings import cms_settings
 from aratinga.blocks import CONTENT_STREAMBLOCKS
 from aratinga.blocks import LAYOUT_STREAMBLOCKS
+from aratinga.widgets import ClassifierSelectWidget
+from aratinga.models.snippet_models import ClassifierTerm
 
 
 CMS_PAGE_MODELS = []
@@ -94,14 +100,34 @@ class AratingaPage(Page, metaclass=AratingaPageMeta):
     )
 
     ###############
+    # Classify
+    ###############
+
+    classifier_terms = ParentalManyToManyField(
+        "aratinga.ClassifierTerm",
+        blank=True,
+        verbose_name=_("Classifiers"),
+        help_text=_(
+            "Categorize and group pages together with classifiers. "
+            "Used to organize and filter pages across the site."
+        ),
+    )
+    tags = ClusterTaggableManager(
+        through=AratingaTag,
+        blank=True,
+        verbose_name=_("Tags"),
+        help_text=_("Used to organize pages across the site."),
+    )
+
+    ###############
     # Panels
     ###############
 
-    body_content_panels = []
+    classify_panels = [
+        FieldPanel("classifier_terms", widget=ClassifierSelectWidget()),
+        FieldPanel("tags"),
+    ]
 
-    bottom_content_panels = []
-
-    layout_panels = []
 
     def __init__(self, *args, **kwargs):
         """
@@ -130,15 +156,11 @@ class AratingaPage(Page, metaclass=AratingaPageMeta):
         """
         panels = [
             ObjectList(
-                cls.content_panels
-                + cls.body_content_panels
-                + cls.bottom_content_panels,
+                cls.content_panels,
                 heading=_("Content"),
             ),
-            ObjectList(cls.layout_panels, heading=_("Layout")),
-            ObjectList(
-                cls.settings_panels, heading=_("Settings"), classname="settings"
-            ),
+            ObjectList(cls.classify_panels, heading=_("Classify")),
+            ObjectList(cls.promote_panels, heading=_("Promote")),
         ]
 
         edit_handler = TabbedInterface(panels)
@@ -177,7 +199,7 @@ class AratingaWebPage(AratingaPage):
     search_fields = AratingaPage.search_fields + [index.SearchField("body")]
 
     # Panels
-    body_content_panels = [
+    content_panels = Page.content_panels + [
         FieldPanel("body"),
     ]
 
@@ -241,6 +263,26 @@ class AratingaArticlePage(AratingaWebPage):
         blank=True,
         verbose_name=_("Display publish date"),
     )
+
+    search_fields = AratingaWebPage.search_fields + [
+        index.SearchField("caption", boost=2),
+        index.FilterField("author"),
+        index.FilterField("author_display"),
+        index.FilterField("date_display"),
+    ]
+
+    content_panels = AratingaWebPage.content_panels + [
+        FieldPanel("caption"),
+        MultiFieldPanel(
+            [
+                FieldPanel("author"),
+                FieldPanel("author_display"),
+                FieldPanel("date_display"),
+            ],
+            _("Publication Info"),
+        ),
+    ]
+
 
 class AratingaArticleIndexPage(AratingaWebPage):
     """

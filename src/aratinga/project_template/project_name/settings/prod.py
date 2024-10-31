@@ -33,7 +33,7 @@ CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
         "LOCATION": BASE_DIR / "cache",  # noqa
-        "KEY_PREFIX": "coderedcms",
+        "KEY_PREFIX": "aratinga",
         "TIMEOUT": 14400,  # in seconds
     }
 }

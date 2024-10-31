@@ -1,7 +1,7 @@
 # Install aratinga from local directory.
 -e .
 
-# Requirements, in addition to coderedcms, needed for CI runner.
+# Requirements, in addition to aratinga, needed for CI runner.
 codespell
 pytest
 pytest-cov

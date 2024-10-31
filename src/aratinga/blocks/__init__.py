@@ -23,6 +23,7 @@ from .html_blocks import QuoteBlock
 from .html_blocks import RichTextBlock
 from .html_blocks import TableBlock
 
+from .layout_blocks import GridBlock
 from .layout_blocks import CardGridBlock
 
 # Collections of blocks commonly used together.
@@ -55,6 +56,7 @@ CONTENT_STREAMBLOCKS = HTML_STREAMBLOCKS + [
 ]
 
 LAYOUT_STREAMBLOCKS = [
+    ("row", GridBlock(CONTENT_STREAMBLOCKS)),
     (
         "cardgrid",
         CardGridBlock(

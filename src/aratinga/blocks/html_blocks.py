@@ -185,8 +185,8 @@ class PageListBlock(BaseBlock):
         context = super().get_context(value, parent_context=parent_context)
 
         indexer = value["indexed_by"].specific
-        # try to use the CoderedPage `get_index_children()`,
-        # but fall back to get_children if this is a non-CoderedPage
+        # try to use the AratingaPage `get_index_children()`,
+        # but fall back to get_children if this is a non-AratingaPage
         if hasattr(indexer, "get_index_children"):
             pages = indexer.get_index_children()
             if value["classified_by"]:
@@ -195,13 +195,13 @@ class PageListBlock(BaseBlock):
                         classifier_terms=value["classified_by"]
                     )
                 except AttributeError:
-                    # `pages` is not a queryset, or is not a queryset of CoderedPage.
+                    # `pages` is not a queryset, or is not a queryset of AratingaPage.
                     logger.warning(
                         (
                             "Tried to filter by ClassifierTerm in PageListBlock, "
                             "but <%s.%s ('%s')>.get_index_children() "
                             "did not return a queryset or is not a queryset of "
-                            "CoderedPage models."
+                            "AratingaPage models."
                         ),
                         indexer._meta.app_label,
                         indexer.__class__.__name__,

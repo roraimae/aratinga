@@ -34,7 +34,7 @@ class ClassifierTermChooserBlock(blocks.FieldBlock):
 
     @cached_property
     def target_model(self):
-        return resolve_model_string("coderedcms.ClassifierTerm")
+        return resolve_model_string("aratinga.ClassifierTerm")
 
     @cached_property
     def field(self):
@@ -241,7 +241,7 @@ class ButtonMixin(blocks.StructBlock):
 
 class BaseLayoutBlock(BaseBlock):
     """
-    Common attributes for all blocks used in Wagtail CRX.
+    Common attributes for all blocks used in Aratinga CMS.
     """
 
     # Subclasses can override this to provide a default list of blocks for the content.
