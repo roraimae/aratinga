@@ -75,6 +75,7 @@
             {% block content_body %}
                 {% for block in page.body %}
                     {% include_block block with settings=settings %}
+                    <br />
                 {% endfor %}
             {% endblock %}
         
