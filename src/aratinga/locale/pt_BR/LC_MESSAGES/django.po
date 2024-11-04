@@ -6,277 +6,637 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-16 09:05-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2024-11-04 08:53-0400\n"
+"PO-Revision-Date: 2024-11-04 09:33-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: src/aratinga/blocks/base_blocks.py:68 src/aratinga/models/page_models.py:158
+"X-Generator: Poedit 3.5\n"
+
+#: src/aratinga/blocks/base_blocks.py:83
+msgid "Custom CSS Class"
+msgstr "Classe CSS Customizada"
+
+#: src/aratinga/blocks/base_blocks.py:88 src/aratinga/models/snippet_models.py:198
+msgid "Custom ID"
+msgstr "ID Padrão"
+
+#: src/aratinga/blocks/base_blocks.py:95
+msgid "Advanced Settings"
+msgstr "Configurações Avançadas"
+
+#: src/aratinga/blocks/base_blocks.py:108 src/aratinga/models/page_models.py:99
+msgid "Template"
+msgstr "Modelo"
+
+#: src/aratinga/blocks/base_blocks.py:125
+msgid "Column Breakpoint"
+msgstr "Ponto de Interrupção de Coluna"
+
+#: src/aratinga/blocks/base_blocks.py:127
+msgid "Screen size at which the column will expand horizontally or stack vertically."
+msgstr "Tamanho da tela no qual a coluna se expandirá horizontalmente ou empilhará verticalmente."
+
+#: src/aratinga/blocks/base_blocks.py:231
+msgid "Button Style"
+msgstr "Estilo do botão"
+
+#: src/aratinga/blocks/base_blocks.py:237
+msgid "Button Size"
+msgstr "Tamanho do Botão"
+
+#: src/aratinga/blocks/base_blocks.py:258 src/aratinga/models/page_models.py:160
 msgid "Content"
+msgstr "Conteúdo"
+
+#: src/aratinga/blocks/base_blocks.py:311
+msgid "Page link"
+msgstr "Link da página"
+
+#: src/aratinga/blocks/base_blocks.py:315 src/aratinga/blocks/html_blocks.py:46
+msgid "Document link"
+msgstr "Link do documento"
+
+#: src/aratinga/blocks/base_blocks.py:320
+msgid "Other link"
+msgstr "Outro Link"
+
+#: src/aratinga/blocks/base_blocks.py:325 src/aratinga/blocks/content_blocks.py:28
+msgid "Title"
+msgstr "Título"
+
+#: src/aratinga/blocks/content_blocks.py:23 src/aratinga/blocks/html_blocks.py:120
+#: src/aratinga/blocks/html_blocks.py:126 src/aratinga/blocks/html_blocks.py:135
+#: src/aratinga/models/snippet_models.py:182
+msgid "Image"
+msgstr "Imagem"
+
+#: src/aratinga/blocks/content_blocks.py:33
+msgid "Subtitle"
+msgstr "Subtítulo"
+
+#: src/aratinga/blocks/content_blocks.py:37
+msgid "Body"
+msgstr "Corpo"
+
+#: src/aratinga/blocks/content_blocks.py:43
+msgid "Links"
+msgstr "Links"
+
+#: src/aratinga/blocks/content_blocks.py:49
+msgid "Card"
+msgstr "Cartão"
+
+#: src/aratinga/blocks/content_blocks.py:61 src/aratinga/models/snippet_models.py:123
+#: src/aratinga/models/snippet_models.py:174
+msgid "Carousel"
+msgstr "Carrossel"
+
+#: src/aratinga/blocks/content_blocks.py:73
+msgid "Image Collection"
+msgstr "Coleção de Imagens"
+
+#: src/aratinga/blocks/content_blocks.py:79
+msgid "Image Gallery"
+msgstr "Galeria de Imagens"
+
+#: src/aratinga/blocks/html_blocks.py:35
+msgid "Button Link"
+msgstr "Link do botão"
+
+#: src/aratinga/blocks/html_blocks.py:52
+msgid "Download"
+msgstr "Baixar"
+
+#: src/aratinga/blocks/html_blocks.py:63
+msgid "Search query"
+msgstr "Pesquisa"
+
+#: src/aratinga/blocks/html_blocks.py:65
+msgid "Address or search term used to find your location on the map."
+msgstr "Endereço ou termo de pesquisa usado para encontrar sua localização no mapa."
+
+#: src/aratinga/blocks/html_blocks.py:71
+msgid "Map title"
+msgstr "Título do mapa"
+
+#: src/aratinga/blocks/html_blocks.py:72
+msgid "Map title for screen readers, ex: \"Map to Goodale Park\""
 msgstr ""
+"Título do mapa para leitores de tela, por exemplo: \"Mapa para Complexo Poli-esportivo Ayrton "
+"Senna da Silva\""
+
+#: src/aratinga/blocks/html_blocks.py:77
+msgid "Google place ID"
+msgstr "ID do lugar do Google"
+
+#: src/aratinga/blocks/html_blocks.py:78
+msgid "Requires API key to use place ID."
+msgstr "Requer chave de API para usar o ID do local."
+
+#: src/aratinga/blocks/html_blocks.py:83
+msgid "Map zoom level"
+msgstr "Nível de zoom do mapa"
+
+#: src/aratinga/blocks/html_blocks.py:85
+msgid ""
+"Requires API key to use zoom. 1: World, 5: Landmass/continent, 10: City, 15: Streets, 20: "
+"Buildings"
+msgstr ""
+"Requer chave de API para usar o zoom. 1: Mundo, 5: Massa de terra/continente, 10: Cidade, 15: "
+"Ruas, 20: Edifícios"
+
+#: src/aratinga/blocks/html_blocks.py:92
+msgid "Google Map"
+msgstr "Mapa do Google"
+
+#: src/aratinga/blocks/html_blocks.py:104
+msgid "Link to a YouTube/Vimeo video, tweet, facebook post, etc."
+msgstr "Link para um vídeo do YouTube/Vimeo, tweet, postagem no Facebook, etc."
+
+#: src/aratinga/blocks/html_blocks.py:111
+msgid "Embed Media"
+msgstr "Incorporar mídia"
+
+#: src/aratinga/blocks/html_blocks.py:140
+msgid "Alternate text to show if the image doesn’t load"
+msgstr "Texto alternativo para mostrar se a imagem não carrega"
+
+#: src/aratinga/blocks/html_blocks.py:146
+msgid "Image Link"
+msgstr "Link da imagem"
+
+#: src/aratinga/blocks/html_blocks.py:157
+msgid "Parent page"
+msgstr "Página pai"
+
+#: src/aratinga/blocks/html_blocks.py:159
+msgid ""
+"Show a preview of pages that are children of the selected page. Uses ordering specified in the "
+"page’s LAYOUT tab."
+msgstr ""
+"Mostre uma visualização das páginas que são filhas da página selecionada. Usa a ordem "
+"especificada na guia LAYOUT da página."
+
+#: src/aratinga/blocks/html_blocks.py:165
+msgid "Classified as"
+msgstr "Classificado como"
+
+#: src/aratinga/blocks/html_blocks.py:166
+msgid "Only show pages that are classified with this term."
+msgstr "Mostrar apenas páginas classificadas com este termo."
+
+#: src/aratinga/blocks/html_blocks.py:172
+msgid "Show body preview"
+msgstr "Mostrar visualização do corpo"
+
+#: src/aratinga/blocks/html_blocks.py:176
+msgid "Number of pages to show"
+msgstr "Número de páginas a serem exibidas"
+
+#: src/aratinga/blocks/html_blocks.py:182
+msgid "Latest Pages"
+msgstr "Últimas páginas"
+
+#: src/aratinga/blocks/html_blocks.py:224
+msgid "Page to preview"
+msgstr "Página para visualizar"
+
+#: src/aratinga/blocks/html_blocks.py:225
+msgid "Show a mini preview of the selected page."
+msgstr "Mostre uma mini visualização da página selecionada."
+
+#: src/aratinga/blocks/html_blocks.py:231
+msgid "Page Preview"
+msgstr "Visualização da página"
+
+#: src/aratinga/blocks/html_blocks.py:242
+msgid "Quote Text"
+msgstr "Texto de citação"
+
+#: src/aratinga/blocks/html_blocks.py:247 src/aratinga/models/page_models.py:253
+msgid "Author"
+msgstr "Autor"
+
+#: src/aratinga/blocks/html_blocks.py:253
+msgid "Quote"
+msgstr "Citação"
 
 #: src/aratinga/blocks/layout_blocks.py:27
 msgid "Column size"
-msgstr ""
+msgstr "Tamanho da coluna"
 
-#: src/aratinga/blocks/layout_blocks.py:44
-#: src/aratinga/blocks/layout_blocks.py:63
+#: src/aratinga/blocks/layout_blocks.py:44 src/aratinga/blocks/layout_blocks.py:63
 #: src/aratinga/blocks/layout_blocks.py:80
 msgid "Full width"
-msgstr ""
+msgstr "Largura total"
 
 #: src/aratinga/blocks/layout_blocks.py:50
 msgid "Responsive Grid Row"
-msgstr ""
+msgstr "Linha de grade responsiva"
 
 #: src/aratinga/blocks/layout_blocks.py:69
 msgid "Card Grid"
-msgstr ""
+msgstr "Grade de Cartões"
 
 #: src/aratinga/blocks/layout_blocks.py:84
 msgid "Parallax Effect"
-msgstr ""
+msgstr "Efeito de paralaxe"
 
 #: src/aratinga/blocks/layout_blocks.py:86
-msgid ""
-"Background images scroll slower than foreground images, creating an illusion "
-"of depth."
+msgid "Background images scroll slower than foreground images, creating an illusion of depth."
 msgstr ""
+"As imagens de fundo rolam mais lentamente do que as imagens de primeiro plano, criando uma "
+"ilusão de profundidade."
 
 #: src/aratinga/blocks/layout_blocks.py:93
 msgid "Tile background image"
-msgstr ""
+msgstr "Imagem de fundo lado a lado"
 
-#: src/aratinga/blocks/layout_blocks.py:98
+#: src/aratinga/blocks/layout_blocks.py:98 src/aratinga/models/snippet_models.py:187
 msgid "Background color"
-msgstr ""
+msgstr "Cor de fundo"
 
-#: src/aratinga/blocks/layout_blocks.py:99
-#: src/aratinga/blocks/layout_blocks.py:105
+#: src/aratinga/blocks/layout_blocks.py:99 src/aratinga/blocks/layout_blocks.py:105
+#: src/aratinga/models/snippet_models.py:188
 msgid "Hexadecimal, rgba, or CSS color notation (e.g. #ff0011)"
-msgstr ""
+msgstr "Notação de cores hexadecimal, rgba ou CSS (por exemplo, #ff0011)"
 
 #: src/aratinga/blocks/layout_blocks.py:104
 msgid "Text color"
-msgstr ""
+msgstr "Cor do texto"
 
 #: src/aratinga/forms.py:14
 msgid "Search"
-msgstr ""
+msgstr "Pesquisa"
 
 #: src/aratinga/forms.py:20
 msgid "Page type"
-msgstr ""
+msgstr "Tipo de página"
 
 #: src/aratinga/importexport.py:17
 msgid "File to import"
-msgstr ""
+msgstr "Arquivo a ser importado"
 
 #: src/aratinga/importexport.py:22
 msgid "Destination parent page"
-msgstr ""
+msgstr "Página pai de destino"
 
 #: src/aratinga/importexport.py:23
 msgid "Imported pages will be created as children of this page."
-msgstr ""
+msgstr "As páginas importadas serão criadas como filhas desta página."
 
-#: src/aratinga/models/page_models.py:69
+#: src/aratinga/models/page_models.py:53
 msgid "Aratinga Tag"
-msgstr ""
+msgstr "Tag do Aratinga"
 
-#: src/aratinga/models/page_models.py:83
+#: src/aratinga/models/page_models.py:67
 msgid "Aratinga Page"
-msgstr ""
+msgstr "Página do Aratinga"
 
-#: src/aratinga/models/page_models.py:92
+#: src/aratinga/models/page_models.py:76
 msgid "Default Ordering"
-msgstr ""
+msgstr "Ordenação padrão"
 
-#: src/aratinga/models/page_models.py:93
+#: src/aratinga/models/page_models.py:77
 msgid "Date first published, newest to oldest"
-msgstr ""
+msgstr "Data da primeira publicação, do mais recente para o mais antigo"
 
-#: src/aratinga/models/page_models.py:94
+#: src/aratinga/models/page_models.py:78
 msgid "Date first published, oldest to newest"
-msgstr ""
+msgstr "Data da primeira publicação, do mais antigo para o mais recente"
 
-#: src/aratinga/models/page_models.py:95
+#: src/aratinga/models/page_models.py:79
 msgid "Date updated, newest to oldest"
-msgstr ""
+msgstr "Data de atualização, do mais recente para o mais antigo"
 
-#: src/aratinga/models/page_models.py:96
+#: src/aratinga/models/page_models.py:80
 msgid "Date updated, oldest to newest"
-msgstr ""
+msgstr "Data de atualização, do mais antigo para o mais recente"
 
-#: src/aratinga/models/page_models.py:97
+#: src/aratinga/models/page_models.py:81
 msgid "Title, alphabetical"
-msgstr ""
+msgstr "Título, alfabético"
 
-#: src/aratinga/models/page_models.py:98
+#: src/aratinga/models/page_models.py:82
 msgid "Title, reverse alphabetical"
-msgstr ""
+msgstr "Título, alfabético reverso"
 
-#: src/aratinga/models/page_models.py:106
+#: src/aratinga/models/page_models.py:90
 msgid "Order child pages by"
-msgstr ""
+msgstr "Ordenar páginas secundárias por"
 
-#: src/aratinga/models/page_models.py:107
+#: src/aratinga/models/page_models.py:91
 msgid "Child pages will then be sorted by this attribute."
-msgstr ""
+msgstr "As páginas secundárias serão classificadas por esse atributo."
 
-#: src/aratinga/models/page_models.py:115
-msgid "Template"
-msgstr ""
+#: src/aratinga/models/page_models.py:109 src/aratinga/models/snippet_models.py:29
+msgid "Classifiers"
+msgstr "Classificadores"
 
-#: src/aratinga/models/page_models.py:160
-msgid "Layout"
+#: src/aratinga/models/page_models.py:111
+msgid ""
+"Categorize and group pages together with classifiers. Used to organize and filter pages across "
+"the site."
 msgstr ""
+"Categorize e agrupe páginas com classificadores. Usado para organizar e filtrar páginas em todo "
+"o site."
+
+#: src/aratinga/models/page_models.py:118
+msgid "Tags"
+msgstr "Marcadores"
+
+#: src/aratinga/models/page_models.py:119
+msgid "Used to organize pages across the site."
+msgstr "Usado para organizar páginas em todo o site."
 
 #: src/aratinga/models/page_models.py:162
-msgid "Settings"
-msgstr ""
+msgid "Classify"
+msgstr "Classificar"
+
+#: src/aratinga/models/page_models.py:163
+msgid "Promote"
+msgstr "Promover"
 
 #: src/aratinga/models/page_models.py:184
 msgid "Aratinga Web Page"
-msgstr ""
+msgstr "Página Web do Aratinga"
 
 #: src/aratinga/models/page_models.py:226
 msgid "Aratinga Article"
-msgstr ""
+msgstr "Artigo do Aratinga"
 
 #: src/aratinga/models/page_models.py:245
 msgid "Caption"
-msgstr ""
-
-#: src/aratinga/models/page_models.py:253
-msgid "Author"
-msgstr ""
+msgstr "Legenda"
 
 #: src/aratinga/models/page_models.py:258
 msgid "Display author as"
-msgstr ""
+msgstr "Exibir autor como"
 
 #: src/aratinga/models/page_models.py:259
 msgid "Override how the author’s name displays on this article."
-msgstr ""
+msgstr "Substitua como o nome do autor é exibido neste artigo."
 
 #: src/aratinga/models/page_models.py:264
 msgid "Display publish date"
-msgstr ""
+msgstr "Exibir data de publicação"
 
-#: src/aratinga/models/page_models.py:273
+#: src/aratinga/models/page_models.py:282
+msgid "Publication Info"
+msgstr "Informações da Publicação"
+
+#: src/aratinga/models/page_models.py:293
 msgid "Aratinga Article Index Page"
-msgstr ""
+msgstr "Página de índice do artigo do Aratinga"
 
-#: src/aratinga/models/page_models.py:287
+#: src/aratinga/models/page_models.py:307
 msgid "Show images"
-msgstr ""
+msgstr "Mostrar imagens"
 
-#: src/aratinga/models/page_models.py:294
+#: src/aratinga/models/page_models.py:314
 msgid "Show author and date info"
-msgstr ""
+msgstr "Mostrar informações sobre o autor e a data"
 
-#: src/aratinga/models/page_models.py:298
+#: src/aratinga/models/page_models.py:318
 msgid "Show preview text"
-msgstr ""
+msgstr "Mostrar texto de visualização"
 
-#: src/aratinga/models/settings_models.py:72
-msgid "CMS Settings"
-msgstr ""
-
-#: src/aratinga/models/settings_models.py:80
+#: src/aratinga/models/settings_models.py:27
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
-#: src/aratinga/models/settings_models.py:81
+#: src/aratinga/models/settings_models.py:28
 msgid "Brand logo used in the navbar and throughout the site"
-msgstr ""
+msgstr "Logotipo da marca usado na barra de navegação e em todo o site"
 
-#: src/aratinga/models/settings_models.py:89
+#: src/aratinga/models/settings_models.py:36
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
-#: src/aratinga/models/settings_models.py:95
+#: src/aratinga/models/settings_models.py:54
+msgid "CMS Settings"
+msgstr "Configurações do CMS"
+
+#: src/aratinga/models/settings_models.py:61
 msgid "From email address"
-msgstr ""
+msgstr "Endereço de e-mail do remetente"
 
-#: src/aratinga/models/settings_models.py:97
+#: src/aratinga/models/settings_models.py:63
 msgid ""
-"The default email address this site appears to send from. For example: "
-"\"sender@example.com\" or \"Sender Name <sender@example.com>\" (without "
-"quotes)"
+"The default email address this site appears to send from. For example: \"sender@example.com\" "
+"or \"Sender Name <sender@example.com>\" (without quotes)"
 msgstr ""
+"O endereço de e-mail padrão do qual este site parece enviar. Por exemplo: \"remetente@exemplo."
+"com.br\" ou \"Nome do remetente <remetente@exemplo.com.br>\" (sem aspas)"
 
-#: src/aratinga/models/settings_models.py:104
+#: src/aratinga/models/settings_models.py:70
 msgid "Number of results per page"
-msgstr ""
+msgstr "Número de resultados por página"
 
-#: src/aratinga/models/settings_models.py:107
+#: src/aratinga/models/settings_models.py:73
 msgid "Open all external links in new tab"
-msgstr ""
+msgstr "Abrir todos os links externos em uma nova guia"
 
-#: src/aratinga/models/settings_models.py:112
+#: src/aratinga/models/settings_models.py:78
 msgid "Google Maps API Key"
-msgstr ""
+msgstr "Chave de API do Google Maps"
 
-#: src/aratinga/models/settings_models.py:113
+#: src/aratinga/models/settings_models.py:79
 msgid "The API Key used for Google Maps."
-msgstr ""
+msgstr "A chave de API usada para o Google Maps."
 
-#: src/aratinga/models/settings_models.py:118
+#: src/aratinga/models/settings_models.py:84
 msgid "Mailchimp API Key"
-msgstr ""
+msgstr "Chave de API do Mailchimp"
 
-#: src/aratinga/models/settings_models.py:119
+#: src/aratinga/models/settings_models.py:85
 msgid "The API Key used for Mailchimp."
-msgstr ""
+msgstr "A chave de API usada para o Mailchimp."
 
-#: src/aratinga/project_template/project_name/settings/base.py:143
+#: src/aratinga/models/snippet_models.py:28 src/aratinga/models/snippet_models.py:78
+msgid "Classifier"
+msgstr "Classificador"
+
+#: src/aratinga/models/snippet_models.py:35 src/aratinga/models/snippet_models.py:83
+msgid "Slug"
+msgstr "Slug"
+
+#: src/aratinga/models/snippet_models.py:40 src/aratinga/models/snippet_models.py:88
+#: src/aratinga/models/snippet_models.py:127
+msgid "Name"
+msgstr "Nome"
+
+#: src/aratinga/models/snippet_models.py:45 src/aratinga/models/snippet_models.py:73
+msgid "Classifier Terms"
+msgstr "Termos do Classificador"
+
+#: src/aratinga/models/snippet_models.py:72
+msgid "Classifier Term"
+msgstr "Termo do classificador"
+
+#: src/aratinga/models/snippet_models.py:131
+msgid "Show controls"
+msgstr "Mostrar controles"
+
+#: src/aratinga/models/snippet_models.py:133
+msgid "Shows arrows on the left and right of the carousel to advance next or previous slides."
+msgstr ""
+"Mostra setas à esquerda e à direita do carrossel para avançar os slides seguintes ou anteriores."
+
+#: src/aratinga/models/snippet_models.py:139
+msgid "Show indicators"
+msgstr "Mostrar indicadores"
+
+#: src/aratinga/models/snippet_models.py:141
+msgid "Shows small indicators at the bottom of the carousel based on the number of slides."
+msgstr "Mostra pequenos indicadores na parte inferior do carrossel com base no número de slides."
+
+#: src/aratinga/models/snippet_models.py:148
+msgid "Slider"
+msgstr "Controle deslizante"
+
+#: src/aratinga/models/snippet_models.py:155
+msgid "Slides"
+msgstr "Apresentações"
+
+#: src/aratinga/models/snippet_models.py:169
+msgid "Carousel Slide"
+msgstr "Slide carrossel"
+
+#: src/aratinga/models/snippet_models.py:193
+msgid "Custom CSS class"
+msgstr "Classe CSS personalizada"
+
+#: src/aratinga/project_template/project_name/settings/base.py:139
 msgid "English"
-msgstr ""
+msgstr "Inglês"
 
-#: src/aratinga/project_template/project_name/settings/base.py:144
+#: src/aratinga/project_template/project_name/settings/base.py:140
 msgid "Portuguese (Brazil)"
-msgstr ""
+msgstr "Português (Brasil)"
 
 #: src/aratinga/project_template/website/models.py:14
 msgid "Article"
-msgstr ""
+msgstr "Artigo"
 
 #: src/aratinga/project_template/website/models.py:30
 msgid "Article Landing Page"
-msgstr ""
+msgstr "Página inicial de artigos"
 
 #: src/aratinga/project_template/website/models.py:47
 msgid "Web Page"
-msgstr ""
+msgstr "Página web"
 
-#: src/aratinga/settings.py:18
+#: src/aratinga/settings.py:74
 msgid "Default"
-msgstr ""
+msgstr "Padrão"
 
-#: src/aratinga/settings.py:22
+#: src/aratinga/settings.py:78
 msgid "Web page showing title and cover image"
-msgstr ""
+msgstr "Página da Web mostrando título e imagem de capa"
 
-#: src/aratinga/settings.py:26
+#: src/aratinga/settings.py:82
 msgid "Web page without title and cover image"
-msgstr ""
+msgstr "Página da Web sem título e imagem de capa"
 
-#: src/aratinga/settings.py:30
+#: src/aratinga/settings.py:86
 msgid "Home page without title and cover image"
-msgstr ""
+msgstr "Página inicial sem título e imagem de capa"
 
-#: src/aratinga/settings.py:34
+#: src/aratinga/settings.py:90
 msgid "Blank page - no navbar or footer"
-msgstr ""
+msgstr "Página em branco - sem barra de navegação ou rodapé"
 
-#: src/aratinga/themes/settings.py:30 src/aratinga/themes/settings.py:31
+#: src/aratinga/templates/aratinga/blocks/film_strip_block.html:28
+msgid "Previous"
+msgstr "Anterior"
+
+#: src/aratinga/templates/aratinga/blocks/film_strip_block.html:31
+msgid "Next"
+msgstr "Próximo"
+
+#: src/aratinga/templates/aratinga/widgets/checkbox_classifiers.html:31
+msgid "Organize Pages with Classifiers"
+msgstr "Organizar páginas com classificadores"
+
+#: src/aratinga/templates/aratinga/widgets/checkbox_classifiers.html:33
+msgid "Use Classifiers to create custom categories and filters."
+msgstr "Use classificadores para criar categorias e filtros personalizados."
+
+#: src/aratinga/templates/aratinga/widgets/checkbox_classifiers.html:37
+msgid "Add Classifier"
+msgstr "Adicionar classificador"
+
+#: src/aratinga/templates/wagtailadmin/login.html:5
+msgid "Sign in to Aratinga"
+msgstr "Faça login no Aratinga"
+
+#: src/aratinga/themes/apps.py:8
+msgid "Aratinga themes"
+msgstr "Temas do Aratinga"
+
+#: src/aratinga/themes/settings.py:23 src/aratinga/themes/settings.py:24
 msgid "themes"
-msgstr ""
+msgstr "tema"
+
+#: src/aratinga/themes/views.py:21 src/aratinga/themes/wagtail_hooks.py:26
+msgid "Themes"
+msgstr "Temas"
+
+#: src/aratinga/themes/views.py:22
+msgid "Add a theme"
+msgstr "Adicionar tema"
+
+#: src/aratinga/themes/views.py:28
+msgid "Theme"
+msgstr "Tema"
+
+#: src/aratinga/themes/views.py:34
+msgid "Active?"
+msgstr "Ativo?"
+
+#: src/aratinga/themes/views.py:34
+msgid "Active"
+msgstr "Ativo"
+
+#: src/aratinga/themes/views.py:42
+msgid "Add theme"
+msgstr "Adicionar tema"
+
+#: src/aratinga/themes/views.py:43
+#, python-format
+msgid "Theme '%(object)s' created."
+msgstr "Tema '%(object)s' criado."
+
+#: src/aratinga/themes/views.py:44 src/aratinga/themes/views.py:49
+msgid "The theme could not be saved due to errors."
+msgstr "O tema não pôde ser salvo devido a erros."
+
+#: src/aratinga/themes/views.py:48
+#, python-format
+msgid "Theme '%(object)s' updated."
+msgstr "Tema '%(object)s' atualizado."
+
+#: src/aratinga/themes/views.py:50
+msgid "Delete theme"
+msgstr "Excluir tema"
+
+#: src/aratinga/themes/views.py:55
+#, python-format
+msgid "Theme '%(object)s' deleted."
+msgstr "Tema '%(object)s' excluído."
+
+#: src/aratinga/themes/views.py:56
+msgid "Theme site"
+msgstr "Tema do Site"
+
+#: src/aratinga/themes/views.py:57
+msgid "Are you sure you want to delete this theme?"
+msgstr "Tem certeza de que deseja excluir este tema?"

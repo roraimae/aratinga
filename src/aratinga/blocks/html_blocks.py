@@ -99,7 +99,7 @@ class EmbedVideoBlock(BaseBlock):
 
     url = EmbedBlock(
         required=True,
-        label=_("URL"),
+        label="URL",
         help_text=_(
             "Link to a YouTube/Vimeo video, tweet, facebook post, etc."
         ),

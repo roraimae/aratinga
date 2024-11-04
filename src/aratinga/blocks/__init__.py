@@ -68,7 +68,7 @@ LAYOUT_STREAMBLOCKS = [
     (
         "html",
         blocks.RawHTMLBlock(
-            icon="code", form_classname="monospace", label=_("HTML")
+            icon="code", form_classname="monospace", label="HTML"
         ),
     ),
 ]
