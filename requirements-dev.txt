@@ -1,8 +1,0 @@
-# Everything from ci
--r requirements-ci.txt
-
-# Requirements, in addition to aratinga, needed for development.
-build
-libsass
-setuptools>=65.5
-twine
