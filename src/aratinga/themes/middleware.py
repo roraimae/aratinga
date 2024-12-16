@@ -2,6 +2,7 @@ from django.core.exceptions import ImproperlyConfigured
 from wagtail.models import Site
 
 from .settings import ThemeSettings
+from aratinga.themes.thread import set_theme
 
 
 from django.conf import settings
@@ -20,9 +21,11 @@ class ThemeMiddleware:
         # Obter o tema ativo para o site
         try:
             theme_settings = ThemeSettings.for_site(site)
-            if theme_settings.is_active:
-                active_theme = theme_settings
-                settings.TEMPLATES[0]['DIRS'] = [f'themes/{active_theme.name}']
+            theme = theme_settings.theme
+
+            if theme is not None:
+                set_theme(theme)
+            
         except ThemeSettings.DoesNotExist:
             pass
 

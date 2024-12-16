@@ -32,7 +32,7 @@ from aratinga.settings import cms_settings
 from aratinga.blocks import CONTENT_STREAMBLOCKS
 from aratinga.blocks import LAYOUT_STREAMBLOCKS
 from aratinga.widgets import ClassifierSelectWidget
-from aratinga.models.snippet_models import ClassifierTerm
+from aratinga.models.snippets_models import ClassifierTerm, Template
 
 
 CMS_PAGE_MODELS = []
@@ -167,8 +167,6 @@ class AratingaPage(Page, metaclass=AratingaPageMeta):
         return edit_handler.bind_to_model(cls)
 
 
-
-
 ###############################################################################
 # Abstract pages providing pre-built common website functionality, suitable for subclassing.
 # These are abstract so subclasses can override fields if desired.
@@ -226,8 +224,8 @@ class AratingaArticlePage(AratingaWebPage):
         verbose_name = _("Aratinga Article")
         abstract = True
 
-    template = "aratinga/pages/article_page.html"
-    search_template = "aratinga/pages/article_page.search.html"
+    template = "pages/article_page.html"
+    search_template = "pages/article_page.search.html"
 
     related_show_default = True
 
@@ -293,7 +291,7 @@ class AratingaArticleIndexPage(AratingaWebPage):
         verbose_name = _("Aratinga Article Index Page")
         abstract = True
 
-    template = "aratinga/pages/article_index_page.html"
+    template = "pages/article_index_page.html"
 
     index_show_subpages_default = True
 
@@ -317,3 +315,36 @@ class AratingaArticleIndexPage(AratingaWebPage):
         default=True,
         verbose_name=_("Show preview text"),
     )
+
+
+class TemplatePage(Page):
+    """
+    Wagtail Page that supports dynamic template selection using the Template model.
+    """
+    template = models.ForeignKey(
+        Template,
+        on_delete=models.SET_NULL,
+        related_name="pages",
+        null=True,
+        blank=True,
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel("template"),
+    ]
+
+    def get_context(self, request):
+        # Add custom context if required
+        context = super().get_context(request)
+
+        # Pass Wagtail parent data and page metadata here
+        context['page_title'] = self.title
+
+        # Optionally render the custom template dynamically
+        if self.template:
+            context['custom_content'] = self.template.render(context)
+        return context
+
+    class Meta:
+        verbose_name = "Template Page"
+        verbose_name_plural = "Template Pages"

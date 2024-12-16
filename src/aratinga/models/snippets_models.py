@@ -17,6 +17,32 @@ from wagtail.models import Orderable
 from aratinga.blocks import HTML_STREAMBLOCKS
 from wagtail.fields import StreamField
 
+from wagtail.snippets.models import register_snippet
+from wagtail.admin.panels import FieldPanel
+
+
+@register_snippet  # Enables this model to appear as a snippet in the Wagtail admin
+class Template(models.Model):
+    name = models.CharField(max_length=255, unique=True, verbose_name="Template Name")
+    description = models.TextField(blank=True, null=True, verbose_name="Description")
+    content = models.TextField(verbose_name="HTML Content")  # Stores the actual template HTML
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Template"
+        verbose_name_plural = "Templates"
+
+    # Optional method to render the template with context dynamically
+    def render(self, context=None):
+        from django.template import Template as DjangoTemplate, Context
+
+        django_template = DjangoTemplate(self.content)
+        if context is None:
+            context = {}
+        return django_template.render(Context(context))
+
 
 @register_snippet
 class Classifier(ClusterableModel):

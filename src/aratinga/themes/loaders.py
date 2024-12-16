@@ -1,6 +1,6 @@
 import os
 
-from django.conf import settings
+from aratinga.themes import settings
 from django.template.loaders.filesystem import Loader as BaseLoader
 
 from .thread import get_theme

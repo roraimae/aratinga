@@ -20,6 +20,18 @@ from aratinga.forms import SearchForm
 from aratinga.templatetags.aratinga_tags import get_name_of_class
 from aratinga.models import SiteSettings
 
+from django.shortcuts import render, get_object_or_404
+from .models.snippets_models import Template
+
+
+def preview_template(request, template_id):
+    template = get_object_or_404(Template, id=template_id)
+
+    # Example dynamic rendering (context can be passed dynamically from GET/POST data)
+    rendered_content = template.render(context={"user_name": request.user.username})
+
+    return render(request, "pages/preview_template.html", {"rendered_content": rendered_content})
+
 
 @login_required
 @permission_required(
