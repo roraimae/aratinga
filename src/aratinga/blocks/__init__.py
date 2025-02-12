@@ -38,7 +38,7 @@ HTML_STREAMBLOCKS = [
         blocks.RawHTMLBlock(
             icon="code",
             form_classname="monospace",
-            label=_("HTML"),
+            label="HTML",
         ),
     ),
     ("download", DownloadBlock()),

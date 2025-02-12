@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-04 08:53-0400\n"
-"PO-Revision-Date: 2024-11-04 09:33-0400\n"
+"POT-Creation-Date: 2024-11-04 10:29-0400\n"
+"PO-Revision-Date: 2024-11-04 11:04-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -23,7 +23,8 @@ msgstr ""
 msgid "Custom CSS Class"
 msgstr "Classe CSS Customizada"
 
-#: src/aratinga/blocks/base_blocks.py:88 src/aratinga/models/snippet_models.py:198
+#: src/aratinga/blocks/base_blocks.py:88
+#: src/aratinga/models/snippet_models.py:198
 msgid "Custom ID"
 msgstr "ID Padrão"
 
@@ -40,8 +41,11 @@ msgid "Column Breakpoint"
 msgstr "Ponto de Interrupção de Coluna"
 
 #: src/aratinga/blocks/base_blocks.py:127
-msgid "Screen size at which the column will expand horizontally or stack vertically."
-msgstr "Tamanho da tela no qual a coluna se expandirá horizontalmente ou empilhará verticalmente."
+msgid ""
+"Screen size at which the column will expand horizontally or stack vertically."
+msgstr ""
+"Tamanho da tela no qual a coluna se expandirá horizontalmente ou empilhará "
+"verticalmente."
 
 #: src/aratinga/blocks/base_blocks.py:231
 msgid "Button Style"
@@ -51,7 +55,8 @@ msgstr "Estilo do botão"
 msgid "Button Size"
 msgstr "Tamanho do Botão"
 
-#: src/aratinga/blocks/base_blocks.py:258 src/aratinga/models/page_models.py:160
+#: src/aratinga/blocks/base_blocks.py:258
+#: src/aratinga/models/page_models.py:160
 msgid "Content"
 msgstr "Conteúdo"
 
@@ -67,12 +72,15 @@ msgstr "Link do documento"
 msgid "Other link"
 msgstr "Outro Link"
 
-#: src/aratinga/blocks/base_blocks.py:325 src/aratinga/blocks/content_blocks.py:28
+#: src/aratinga/blocks/base_blocks.py:325
+#: src/aratinga/blocks/content_blocks.py:28
 msgid "Title"
 msgstr "Título"
 
-#: src/aratinga/blocks/content_blocks.py:23 src/aratinga/blocks/html_blocks.py:120
-#: src/aratinga/blocks/html_blocks.py:126 src/aratinga/blocks/html_blocks.py:135
+#: src/aratinga/blocks/content_blocks.py:23
+#: src/aratinga/blocks/html_blocks.py:120
+#: src/aratinga/blocks/html_blocks.py:126
+#: src/aratinga/blocks/html_blocks.py:135
 #: src/aratinga/models/snippet_models.py:182
 msgid "Image"
 msgstr "Imagem"
@@ -89,11 +97,12 @@ msgstr "Corpo"
 msgid "Links"
 msgstr "Links"
 
-#: src/aratinga/blocks/content_blocks.py:49
+#: src/aratinga/blocks/content_blocks.py:49 src/aratinga/settings.py:115
 msgid "Card"
 msgstr "Cartão"
 
-#: src/aratinga/blocks/content_blocks.py:61 src/aratinga/models/snippet_models.py:123
+#: src/aratinga/blocks/content_blocks.py:61
+#: src/aratinga/models/snippet_models.py:123
 #: src/aratinga/models/snippet_models.py:174
 msgid "Carousel"
 msgstr "Carrossel"
@@ -120,7 +129,8 @@ msgstr "Pesquisa"
 
 #: src/aratinga/blocks/html_blocks.py:65
 msgid "Address or search term used to find your location on the map."
-msgstr "Endereço ou termo de pesquisa usado para encontrar sua localização no mapa."
+msgstr ""
+"Endereço ou termo de pesquisa usado para encontrar sua localização no mapa."
 
 #: src/aratinga/blocks/html_blocks.py:71
 msgid "Map title"
@@ -129,8 +139,8 @@ msgstr "Título do mapa"
 #: src/aratinga/blocks/html_blocks.py:72
 msgid "Map title for screen readers, ex: \"Map to Goodale Park\""
 msgstr ""
-"Título do mapa para leitores de tela, por exemplo: \"Mapa para Complexo Poli-esportivo Ayrton "
-"Senna da Silva\""
+"Título do mapa para leitores de tela, por exemplo: \"Mapa para Complexo Poli-"
+"esportivo Ayrton Senna da Silva\""
 
 #: src/aratinga/blocks/html_blocks.py:77
 msgid "Google place ID"
@@ -146,11 +156,11 @@ msgstr "Nível de zoom do mapa"
 
 #: src/aratinga/blocks/html_blocks.py:85
 msgid ""
-"Requires API key to use zoom. 1: World, 5: Landmass/continent, 10: City, 15: Streets, 20: "
-"Buildings"
+"Requires API key to use zoom. 1: World, 5: Landmass/continent, 10: City, 15: "
+"Streets, 20: Buildings"
 msgstr ""
-"Requer chave de API para usar o zoom. 1: Mundo, 5: Massa de terra/continente, 10: Cidade, 15: "
-"Ruas, 20: Edifícios"
+"Requer chave de API para usar o zoom. 1: Mundo, 5: Massa de terra/"
+"continente, 10: Cidade, 15: Ruas, 20: Edifícios"
 
 #: src/aratinga/blocks/html_blocks.py:92
 msgid "Google Map"
@@ -178,11 +188,11 @@ msgstr "Página pai"
 
 #: src/aratinga/blocks/html_blocks.py:159
 msgid ""
-"Show a preview of pages that are children of the selected page. Uses ordering specified in the "
-"page’s LAYOUT tab."
+"Show a preview of pages that are children of the selected page. Uses "
+"ordering specified in the page’s LAYOUT tab."
 msgstr ""
-"Mostre uma visualização das páginas que são filhas da página selecionada. Usa a ordem "
-"especificada na guia LAYOUT da página."
+"Mostre uma visualização das páginas que são filhas da página selecionada. "
+"Usa a ordem especificada na guia LAYOUT da página."
 
 #: src/aratinga/blocks/html_blocks.py:165
 msgid "Classified as"
@@ -220,7 +230,8 @@ msgstr "Visualização da página"
 msgid "Quote Text"
 msgstr "Texto de citação"
 
-#: src/aratinga/blocks/html_blocks.py:247 src/aratinga/models/page_models.py:253
+#: src/aratinga/blocks/html_blocks.py:247
+#: src/aratinga/models/page_models.py:253
 msgid "Author"
 msgstr "Autor"
 
@@ -232,7 +243,8 @@ msgstr "Citação"
 msgid "Column size"
 msgstr "Tamanho da coluna"
 
-#: src/aratinga/blocks/layout_blocks.py:44 src/aratinga/blocks/layout_blocks.py:63
+#: src/aratinga/blocks/layout_blocks.py:44
+#: src/aratinga/blocks/layout_blocks.py:63
 #: src/aratinga/blocks/layout_blocks.py:80
 msgid "Full width"
 msgstr "Largura total"
@@ -250,20 +262,24 @@ msgid "Parallax Effect"
 msgstr "Efeito de paralaxe"
 
 #: src/aratinga/blocks/layout_blocks.py:86
-msgid "Background images scroll slower than foreground images, creating an illusion of depth."
+msgid ""
+"Background images scroll slower than foreground images, creating an illusion "
+"of depth."
 msgstr ""
-"As imagens de fundo rolam mais lentamente do que as imagens de primeiro plano, criando uma "
-"ilusão de profundidade."
+"As imagens de fundo rolam mais lentamente do que as imagens de primeiro "
+"plano, criando uma ilusão de profundidade."
 
 #: src/aratinga/blocks/layout_blocks.py:93
 msgid "Tile background image"
 msgstr "Imagem de fundo lado a lado"
 
-#: src/aratinga/blocks/layout_blocks.py:98 src/aratinga/models/snippet_models.py:187
+#: src/aratinga/blocks/layout_blocks.py:98
+#: src/aratinga/models/snippet_models.py:187
 msgid "Background color"
 msgstr "Cor de fundo"
 
-#: src/aratinga/blocks/layout_blocks.py:99 src/aratinga/blocks/layout_blocks.py:105
+#: src/aratinga/blocks/layout_blocks.py:99
+#: src/aratinga/blocks/layout_blocks.py:105
 #: src/aratinga/models/snippet_models.py:188
 msgid "Hexadecimal, rgba, or CSS color notation (e.g. #ff0011)"
 msgstr "Notação de cores hexadecimal, rgba ou CSS (por exemplo, #ff0011)"
@@ -336,17 +352,18 @@ msgstr "Ordenar páginas secundárias por"
 msgid "Child pages will then be sorted by this attribute."
 msgstr "As páginas secundárias serão classificadas por esse atributo."
 
-#: src/aratinga/models/page_models.py:109 src/aratinga/models/snippet_models.py:29
+#: src/aratinga/models/page_models.py:109
+#: src/aratinga/models/snippet_models.py:29
 msgid "Classifiers"
 msgstr "Classificadores"
 
 #: src/aratinga/models/page_models.py:111
 msgid ""
-"Categorize and group pages together with classifiers. Used to organize and filter pages across "
-"the site."
+"Categorize and group pages together with classifiers. Used to organize and "
+"filter pages across the site."
 msgstr ""
-"Categorize e agrupe páginas com classificadores. Usado para organizar e filtrar páginas em todo "
-"o site."
+"Categorize e agrupe páginas com classificadores. Usado para organizar e "
+"filtrar páginas em todo o site."
 
 #: src/aratinga/models/page_models.py:118
 msgid "Tags"
@@ -420,6 +437,19 @@ msgstr "Logotipo da marca usado na barra de navegação e em todo o site"
 msgid "Favicon"
 msgstr "Favicon"
 
+#: src/aratinga/models/settings_models.py:40
+msgid "Title suffix"
+msgstr "Sufixo do título"
+
+#: src/aratinga/models/settings_models.py:42
+msgid "The suffix for the title meta tag e.g. ' | The Jandaya Institute'"
+msgstr ""
+"O sufixo para a meta tag do título, por exemplo, ' | Instituto Jandaia'"
+
+#: src/aratinga/models/settings_models.py:43
+msgid "The Jandaya Institute"
+msgstr "Instituto Jandaia"
+
 #: src/aratinga/models/settings_models.py:54
 msgid "CMS Settings"
 msgstr "Configurações do CMS"
@@ -430,11 +460,13 @@ msgstr "Endereço de e-mail do remetente"
 
 #: src/aratinga/models/settings_models.py:63
 msgid ""
-"The default email address this site appears to send from. For example: \"sender@example.com\" "
-"or \"Sender Name <sender@example.com>\" (without quotes)"
+"The default email address this site appears to send from. For example: "
+"\"sender@example.com\" or \"Sender Name <sender@example.com>\" (without "
+"quotes)"
 msgstr ""
-"O endereço de e-mail padrão do qual este site parece enviar. Por exemplo: \"remetente@exemplo."
-"com.br\" ou \"Nome do remetente <remetente@exemplo.com.br>\" (sem aspas)"
+"O endereço de e-mail padrão do qual este site parece enviar. Por exemplo: "
+"\"remetente@exemplo.com.br\" ou \"Nome do remetente <remetente@exemplo.com."
+"br>\" (sem aspas)"
 
 #: src/aratinga/models/settings_models.py:70
 msgid "Number of results per page"
@@ -460,20 +492,24 @@ msgstr "Chave de API do Mailchimp"
 msgid "The API Key used for Mailchimp."
 msgstr "A chave de API usada para o Mailchimp."
 
-#: src/aratinga/models/snippet_models.py:28 src/aratinga/models/snippet_models.py:78
+#: src/aratinga/models/snippet_models.py:28
+#: src/aratinga/models/snippet_models.py:78
 msgid "Classifier"
 msgstr "Classificador"
 
-#: src/aratinga/models/snippet_models.py:35 src/aratinga/models/snippet_models.py:83
+#: src/aratinga/models/snippet_models.py:35
+#: src/aratinga/models/snippet_models.py:83
 msgid "Slug"
 msgstr "Slug"
 
-#: src/aratinga/models/snippet_models.py:40 src/aratinga/models/snippet_models.py:88
+#: src/aratinga/models/snippet_models.py:40
+#: src/aratinga/models/snippet_models.py:88
 #: src/aratinga/models/snippet_models.py:127
 msgid "Name"
 msgstr "Nome"
 
-#: src/aratinga/models/snippet_models.py:45 src/aratinga/models/snippet_models.py:73
+#: src/aratinga/models/snippet_models.py:45
+#: src/aratinga/models/snippet_models.py:73
 msgid "Classifier Terms"
 msgstr "Termos do Classificador"
 
@@ -486,17 +522,24 @@ msgid "Show controls"
 msgstr "Mostrar controles"
 
 #: src/aratinga/models/snippet_models.py:133
-msgid "Shows arrows on the left and right of the carousel to advance next or previous slides."
+msgid ""
+"Shows arrows on the left and right of the carousel to advance next or "
+"previous slides."
 msgstr ""
-"Mostra setas à esquerda e à direita do carrossel para avançar os slides seguintes ou anteriores."
+"Mostra setas à esquerda e à direita do carrossel para avançar os slides "
+"seguintes ou anteriores."
 
 #: src/aratinga/models/snippet_models.py:139
 msgid "Show indicators"
 msgstr "Mostrar indicadores"
 
 #: src/aratinga/models/snippet_models.py:141
-msgid "Shows small indicators at the bottom of the carousel based on the number of slides."
-msgstr "Mostra pequenos indicadores na parte inferior do carrossel com base no número de slides."
+msgid ""
+"Shows small indicators at the bottom of the carousel based on the number of "
+"slides."
+msgstr ""
+"Mostra pequenos indicadores na parte inferior do carrossel com base no "
+"número de slides."
 
 #: src/aratinga/models/snippet_models.py:148
 msgid "Slider"
@@ -534,25 +577,206 @@ msgstr "Página inicial de artigos"
 msgid "Web Page"
 msgstr "Página web"
 
-#: src/aratinga/settings.py:74
+#: src/aratinga/settings.py:15
+msgid "Small"
+msgstr "Pequeno"
+
+#: src/aratinga/settings.py:16 src/aratinga/settings.py:74
+#: src/aratinga/settings.py:154 src/aratinga/settings.py:163
 msgid "Default"
 msgstr "Padrão"
 
-#: src/aratinga/settings.py:78
+#: src/aratinga/settings.py:17
+msgid "Large"
+msgstr "Grande"
+
+#: src/aratinga/settings.py:22
+msgid "Primary"
+msgstr "Primário"
+
+#: src/aratinga/settings.py:23
+msgid "Secondary"
+msgstr "Secundário"
+
+#: src/aratinga/settings.py:24
+msgid "Success"
+msgstr "Sucesso"
+
+#: src/aratinga/settings.py:25
+msgid "Danger"
+msgstr "Perigo"
+
+#: src/aratinga/settings.py:26
+msgid "Warning"
+msgstr "Aviso"
+
+#: src/aratinga/settings.py:27
+msgid "Info"
+msgstr "Informação"
+
+#: src/aratinga/settings.py:28
+msgid "Link"
+msgstr "Link"
+
+#: src/aratinga/settings.py:29
+msgid "Light"
+msgstr "Claro"
+
+#: src/aratinga/settings.py:30
+msgid "Dark"
+msgstr "Escuro"
+
+#: src/aratinga/settings.py:31
+msgid "Outline Primary"
+msgstr "Contorno Primário"
+
+#: src/aratinga/settings.py:32
+msgid "Outline Secondary"
+msgstr "Contorno Secundário"
+
+#: src/aratinga/settings.py:33
+msgid "Outline Success"
+msgstr "Contorno de Sucesso"
+
+#: src/aratinga/settings.py:34
+msgid "Outline Danger"
+msgstr "Contorno de Perigo"
+
+#: src/aratinga/settings.py:35
+msgid "Outline Warning"
+msgstr "Contorno de Aviso"
+
+#: src/aratinga/settings.py:36
+msgid "Outline Info"
+msgstr "Contorno de Informação"
+
+#: src/aratinga/settings.py:37
+msgid "Outline Light"
+msgstr "Contorno Claro"
+
+#: src/aratinga/settings.py:38
+msgid "Outline Dark"
+msgstr "Contorno Escuro"
+
+#: src/aratinga/settings.py:44
+msgid "Automatically size"
+msgstr "Dimensionar automaticamente"
+
+#: src/aratinga/settings.py:45
+msgid "Full row"
+msgstr "Linha completa"
+
+#: src/aratinga/settings.py:46
+msgid "Half - 1/2 column"
+msgstr "Metade - 1/2 coluna"
+
+#: src/aratinga/settings.py:47
+msgid "Thirds - 1/3 column"
+msgstr "Terços - 1/3 coluna"
+
+#: src/aratinga/settings.py:48
+msgid "Thirds - 2/3 column"
+msgstr "Terços - 2/3 coluna"
+
+#: src/aratinga/settings.py:49
+msgid "Quarters - 1/4 column"
+msgstr "Quartos - 1/4 de coluna"
+
+#: src/aratinga/settings.py:50
+msgid "Quarters - 3/4 column"
+msgstr "Quartos - 3/4 coluna"
+
+#: src/aratinga/settings.py:51
+msgid "Sixths - 1/6 column"
+msgstr "Sextos - 1/6 coluna"
+
+#: src/aratinga/settings.py:52
+msgid "Sixths - 5/6 column"
+msgstr "Sextos - 5/6 coluna"
+
+#: src/aratinga/settings.py:53
+msgid "Twelfths - 1/12 column"
+msgstr "Duodécimos - 1/12 coluna"
+
+#: src/aratinga/settings.py:54
+msgid "Twelfths - 5/12 column"
+msgstr "Duodécimos - 5/12 coluna"
+
+#: src/aratinga/settings.py:55
+msgid "Twelfths - 7/12 column"
+msgstr "Duodécimos - 7/12 coluna"
+
+#: src/aratinga/settings.py:56
+msgid "Twelfths - 11/12 column"
+msgstr "Duodécimos - 11/12 coluna"
+
+#: src/aratinga/settings.py:62
+msgid "Always expanded"
+msgstr "Sempre expandido"
+
+#: src/aratinga/settings.py:63
+msgid "sm - Expand on small screens (phone, 576px) and larger"
+msgstr "sm - Expanda em telas pequenas (telefone, 576px) e maiores"
+
+#: src/aratinga/settings.py:64
+msgid "md - Expand on medium screens (tablet, 768px) and larger"
+msgstr "md - Expanda em telas médias (tablet, 768px) e maiores"
+
+#: src/aratinga/settings.py:65
+msgid "lg - Expand on large screens (laptop, 992px) and larger"
+msgstr "lg - Expanda em telas grandes (laptop, 992px) e maiores"
+
+#: src/aratinga/settings.py:66
+msgid "xl - Expand on extra large screens (wide monitor, 1200px)"
+msgstr "xl - Expanda em telas extra grandes (monitor amplo, 1200px)"
+
+#: src/aratinga/settings.py:78 src/aratinga/settings.py:167
 msgid "Web page showing title and cover image"
 msgstr "Página da Web mostrando título e imagem de capa"
 
-#: src/aratinga/settings.py:82
+#: src/aratinga/settings.py:82 src/aratinga/settings.py:171
 msgid "Web page without title and cover image"
 msgstr "Página da Web sem título e imagem de capa"
 
-#: src/aratinga/settings.py:86
+#: src/aratinga/settings.py:86 src/aratinga/settings.py:175
 msgid "Home page without title and cover image"
 msgstr "Página inicial sem título e imagem de capa"
 
-#: src/aratinga/settings.py:90
+#: src/aratinga/settings.py:90 src/aratinga/settings.py:179
 msgid "Blank page - no navbar or footer"
 msgstr "Página em branco - sem barra de navegação ou rodapé"
+
+#: src/aratinga/settings.py:119
+msgid "Card with header"
+msgstr "Cartão com cabeçalho"
+
+#: src/aratinga/settings.py:123
+msgid "Card with footer"
+msgstr "Cartão com rodapé"
+
+#: src/aratinga/settings.py:127
+msgid "Card with header and footer"
+msgstr "Cartão com cabeçalho e rodapé"
+
+#: src/aratinga/settings.py:131
+msgid "Blurb - rounded image and no border"
+msgstr "Sinopse - imagem arredondada e sem borda"
+
+#: src/aratinga/settings.py:135
+msgid "Cover image - use image as background"
+msgstr "Imagem da capa - use a imagem como plano de fundo"
+
+#: src/aratinga/settings.py:141
+msgid "Card group - attached cards of equal size"
+msgstr "Grupo de cartas - cartas anexadas de tamanho igual"
+
+#: src/aratinga/settings.py:145
+msgid "Card deck - separate cards of equal size"
+msgstr "Baralho de cartas - cartas separadas de tamanho igual"
+
+#: src/aratinga/settings.py:149
+msgid "Card masonry - fluid brick pattern"
+msgstr "Mural de cartões - padrão de bloco fluido"
 
 #: src/aratinga/templates/aratinga/blocks/film_strip_block.html:28
 msgid "Previous"
@@ -580,11 +804,11 @@ msgstr "Faça login no Aratinga"
 
 #: src/aratinga/themes/apps.py:8
 msgid "Aratinga themes"
-msgstr "Temas do Aratinga"
+msgstr "Temas de Aratinga"
 
 #: src/aratinga/themes/settings.py:23 src/aratinga/themes/settings.py:24
 msgid "themes"
-msgstr "tema"
+msgstr "temas"
 
 #: src/aratinga/themes/views.py:21 src/aratinga/themes/wagtail_hooks.py:26
 msgid "Themes"
@@ -592,7 +816,7 @@ msgstr "Temas"
 
 #: src/aratinga/themes/views.py:22
 msgid "Add a theme"
-msgstr "Adicionar tema"
+msgstr "Adicionar um tema"
 
 #: src/aratinga/themes/views.py:28
 msgid "Theme"

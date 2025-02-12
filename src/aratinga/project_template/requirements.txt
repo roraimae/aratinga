@@ -1,2 +1,2 @@
-aratinga=={{aratinga_release.0}}.{{aratinga_release.1}}.*
+aratinga
 wagtail=={{wagtail_release.0}}.{{wagtail_release.1}}.*

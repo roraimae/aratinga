@@ -1,6 +1,7 @@
 from django import template
 from aratinga import __version__
 from aratinga.settings import cms_settings as cms_settings_obj
+from aratinga.themes import thread
 
 register = template.Library()
 
@@ -15,6 +16,7 @@ def get_name_of_class(class_type):
         return class_type.__class__._meta.verbose_name
     else:
         return class_type.__class__.__name__
+
 
 
 @register.simple_tag
