@@ -18,7 +18,7 @@ dependencies = [
 aratinga = "aratinga.bin:main"
 
 [project.urls]
-Source = "https://github.com/roraimae/aratinga"
+Source = "./src/aratinga"
 
 [build-system]
 requires = ["hatchling"]
