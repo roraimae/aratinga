@@ -1,5 +1,5 @@
 from django import forms
-
+from aratinga.models import Classifier
 
 class ColorPickerWidget(forms.TextInput):
     input_type = "color"
@@ -9,7 +9,6 @@ class ClassifierSelectWidget(forms.CheckboxSelectMultiple):
     template_name = "aratinga/widgets/checkbox_classifiers.html"
 
     def optgroups(self, name, value, attrs=None):
-        from aratinga.models.snippet_models import Classifier
 
         classifiers = Classifier.objects.all().select_related()
 
