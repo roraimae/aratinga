@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 import os
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
-from aratinga.themes.settings import ThemeSettings
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/{{ docs_version }}/howto/deployment/checklist/
@@ -28,7 +27,7 @@ INSTALLED_APPS = [
     "website",
     # Aratinga
     "aratinga",
-    "aratinga.themes",
+    "aratinga.admin",
     "modelcluster",
     "taggit",
 
@@ -69,7 +68,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     # CMS functionality
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
-    'aratinga.themes.middleware.ThemeMiddleware',
+    'aratinga.admin.middleware.ThemeMiddleware',
 
 ]
 
@@ -90,7 +89,7 @@ TEMPLATES = [
                 "wagtail.contrib.settings.context_processors.settings",
             ],
             'loaders': [
-                'aratinga.themes.loaders.ThemeLoader',
+                'aratinga.admin.loaders.ThemeLoader',
                 'django.template.loaders.filesystem.Loader',
                 'django.template.loaders.app_directories.Loader',
             ]
