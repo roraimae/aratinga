@@ -21,7 +21,7 @@ theme_storage = FileSystemStorage(settings.BASE_DIR)
 ARATINGA_THEME_PATH = 'themes'
 ARATINGA_THEMES = [
     ('bootstrap5', "Bootstrap 5"),
-    ('tailwind', "Tailwind"),
+    ('tailwindcss', "Tailwind CSS"),
 ]
 
 

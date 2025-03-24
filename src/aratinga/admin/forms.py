@@ -3,7 +3,7 @@ import zipfile
 import tempfile
 from django import forms
 from .models import Theme
-from aratinga.themes import settings
+from aratinga.admin import settings
 
 
 class ThemeForm(forms.ModelForm):

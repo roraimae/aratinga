@@ -1,7 +1,7 @@
 from django import template
 from aratinga import __version__
 from aratinga.settings import cms_settings as cms_settings_obj
-from aratinga.themes import thread
+from aratinga.admin import thread
 
 register = template.Library()
 
