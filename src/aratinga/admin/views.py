@@ -8,14 +8,6 @@ from wagtail.admin.views import generic
 from wagtail.permissions import site_permission_policy
 from .forms import ThemeForm
 
-def activate_theme(request, theme_id):
-    theme = Theme.objects.get(id=theme_id)
-    # Desativar todos os temas
-    Theme.objects.update(is_active=False)
-    # Ativar o tema selecionado
-    theme.is_active = True
-    theme.save()
-    return redirect('home')
 
 class IndexView(generic.IndexView):
     page_title = _("Themes")
@@ -30,11 +22,7 @@ class IndexView(generic.IndexView):
             url_name="aratingathemes:edit",
         ),
         Column("description"),
-        StatusFlagColumn(
-            "is_active", label=_("Active?"), true_label=_("Active")
-        ),
         Column("theme_path"),
-        
     ]
 
 

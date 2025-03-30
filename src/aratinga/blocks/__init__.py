@@ -7,24 +7,35 @@ single `blocks` module.
 from django.utils.translation import gettext_lazy as _
 from wagtail import blocks
 
+from .content_blocks import (
+    CardBlock,
+    CarouselBlock
+)
 
-from .content_blocks import CardBlock
-from .content_blocks import CarouselBlock
+from .html_blocks import (
+    ButtonBlock,
+    DownloadBlock,
+    EmbedGoogleMapBlock,
+    EmbedVideoBlock,
+    ImageBlock,
+    ImageLinkBlock,
+    PageListBlock,
+    PagePreviewBlock,
+    QuoteBlock,
+    RichTextBlock,
+    TableBlock
+)
 
-from .html_blocks import ButtonBlock
-from .html_blocks import DownloadBlock
-from .html_blocks import EmbedGoogleMapBlock
-from .html_blocks import EmbedVideoBlock
-from .html_blocks import ImageBlock
-from .html_blocks import ImageLinkBlock
-from .html_blocks import PageListBlock
-from .html_blocks import PagePreviewBlock
-from .html_blocks import QuoteBlock
-from .html_blocks import RichTextBlock
-from .html_blocks import TableBlock
+from .layout_blocks import (
+    GridBlock,
+    CardGridBlock
+)
 
-from .layout_blocks import GridBlock
-from .layout_blocks import CardGridBlock
+from .section_blocks import (
+    HeroBlock,
+    PromoBlock,
+    FeaturedSectionBlock
+)
 
 # Collections of blocks commonly used together.
 
@@ -73,4 +84,13 @@ LAYOUT_STREAMBLOCKS = [
     ),
 ]
 
-STREAMFORM_BLOCKS = []
+SECTION_STREAMBLOCKS = [
+    ("hero", HeroBlock()),
+    ("promo", PromoBlock()),
+    ("featured_section", FeaturedSectionBlock()),
+]
+
+COMPONENT_STREAMBLOCKS = [
+    ("content", blocks.StreamBlock(CONTENT_STREAMBLOCKS)),
+    ("section", blocks.StreamBlock(SECTION_STREAMBLOCKS)),
+]
