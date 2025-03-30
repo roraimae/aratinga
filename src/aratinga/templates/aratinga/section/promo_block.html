@@ -1,0 +1,18 @@
+{% load wagtailimages_tags wagtailcore_tags %}
+<div class="row promo-row">
+    <div class="col-sm-6 promo">
+        {% if self.promo_image or self.promo_title or self.promo_text %}
+            <div class="col-lg-10 promo-text">
+                {% if self.promo_title %}
+                    <h2>{{ self.promo_title }}</h2>
+                {% endif %}
+                {% if self.promo_text %}
+                    {{ self.promo_text|richtext }}
+                {% endif %}
+            </div>
+        {% endif %}
+        {% if self.promo_image %}
+            <figure>{% picture self.promo_image format-{avif,webp,jpeg} fill-590x413-c100 %}</figure>
+        {% endif %}
+    </div>
+</div>

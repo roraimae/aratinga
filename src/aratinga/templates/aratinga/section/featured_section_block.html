@@ -1,0 +1,16 @@
+<div class="featured-cards col-sm-5 col-sm-offset-1">
+    {% if self.section %}
+        <h2 class="featured-cards__title">{{ self.title }}</h2>
+        <ul class="featured-cards__list">
+            {% for child in self.section.specific.children|slice:"3" %}
+                <li>
+                    {% include "includes/card/listing-card.html" with page=child %}
+                </li>
+            {% endfor %}
+        </ul>
+        <a class="featured-cards__link" href="{{ self.section.url }}">
+            <span>View more of our {{ self.title }}</span>
+            {% include "includes/chevron-icon.html" with class="featured-cards__chevron-icon" %}
+        </a>
+    {% endif %}
+</div>
