@@ -22,7 +22,7 @@ __ALL__ = ["ThemeSettings"]
 theme_storage = FileSystemStorage(settings.BASE_DIR)
 
 ## Aratinga themes
-ARATINGA_THEME_PATH = 'templates/themes'
+ARATINGA_THEME_PATH = 'themes'
 
 class ThemeManagementPanel(Panel):
     def render(self):
