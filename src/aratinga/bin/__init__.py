@@ -118,7 +118,7 @@ class CreateProject(TemplateCommand):
             2. python manage.py migrate
             3. python manage.py createsuperuser
             4. python manage.py runserver
-            5. Go to http://localhost:8000/admin/ and start editing!
+            5. Go to http://localhost:8000/admin/ 
         """
         print(nextsteps % {"directory": target if target else project_name})
 

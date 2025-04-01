@@ -1,0 +1,12 @@
+{% load wagtailcore_tags %}
+{% wagtail_site as site %}
+User-agent: *
+Disallow: /admin/
+
+User-agent: *
+Disallow: /django-admin/
+
+User-agent: *
+Allow: /
+
+Sitemap: {{ site.root_url }}/sitemap.xml
