@@ -1,3 +1,4 @@
+from django.db import models
 from wagtail.blocks import (
     CharBlock,
     ChoiceBlock,
@@ -53,7 +54,17 @@ class FeaturedSectionBlock(StructBlock):
     # Each list their children items that we access via the children function
     # that we define on the individual Page models e.g. BlogIndexPage
     title = CharBlock(required=False)
-    section = PageChooserBlock(required=False, help_text="Featured section for the homepage. Will display up to three child items.")
+    section = PageChooserBlock(
+        "wagtailcore.Page",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+        verbose_name="Seção em destaque",
+        required=False, 
+        help_text="Featured section for the homepage. Will display up to three child items."
+        )
+    
 
     class Meta:
         icon = "image"
