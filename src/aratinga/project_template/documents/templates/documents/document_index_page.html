@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags govbrds_navigation_tags wagtailimages_tags %}
+
+{% if tag %}
+    {% block title %}
+        Visualização de todos os documentos
+    {% endblock %}
+{% endif %}
+
+{% block content %}
+    {% if not tag %}
+        {% include "includes/headers/header-index.html" %}
+    {% endif %}
+
+    <!-- Form filter -->
+    <form class="searchfilters flex-container" action="{% pageurl page %}" method="GET" >
+    <div class="row col-container">
+            <!--Title-->
+            <div class="col-lg-2">
+                <div class="br-input">
+                    <label for="input-title" class="sr-only">Nome</label>
+                    <input name="title" id="input-title" type="search"
+                           {% if 'title' in request.GET %}
+                           value="{{ request.GET.title }}"
+                           {% endif %}
+                           placeholder="Busca Textual"/>
+                    <button class="br-button" type="button" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <!--Collection-->
+            <div class="col-lg-4">
+                <div class="br-select">
+                    <div class="br-input">
+                        <label for="select-simple" class="sr-only">Coleção:</label>
+                        <input id="select-simple" type="text" placeholder="Coleção"/>
+                        <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1" data-trigger="data-trigger">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="br-list" tabindex="0">
+
+                        {% for item in page.get_collections %}
+                            <div class="br-item" tabindex="-1">
+                                <div class="br-radio">
+                                    <input id="collection_{{ item.collection__id }}" type="radio"
+                                            {% if 'collection_id' in request.GET  %}
+                                               {% if request.GET.collection_id == item.collection__id %}
+                                                    checked="checked"
+                                                {% endif %}
+                                            {% endif %}
+                                           name="collection" value="{{ item.collection__id }}"/>
+                                    <label for="collection_{{ item.collection__id }}">{{ item.collection__name }}</label>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!--Submit-->
+            <div class="col-lg-2">
+                <div class="br-input">
+                    <input type="submit">
+                </div>
+            </div>
+    </div>
+    </form>
+
+    <div>
+        <div class="br-list" role="list">
+            <div class="header">
+                <div class="title">Resultado</div>
+            </div><span class="br-divider"></span>
+            {% if documents %}
+                {% for document in documents %}
+                    {% include "documents/document-list.html" %}
+                {% endfor %}
+            {% else %}
+                <div class="col-md-12">
+                    <p>Ah, pronto. Parece não haver nenhum documento. Desculpe!</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+
+    <nav class="br-pagination" aria-label="Paginação de resultados" data-total="4" data-current="1">
+        <ul>
+            {% if documents.has_previous %}
+                <li>
+                    <a href="?page={{ documents.previous_page_number }}"
+                       class="br-button circle"
+                       data-previous-page="data-previous-page"
+                       aria-label="Página anterior">
+                        <i class="fas fa-angle-left" aria-hidden="true"></i>
+                    </a>
+                </li>
+            {% endif %}
+            {% for page_num in documents.paginator.page_range %}
+                <li><a class="page {% if page_num == documents.number %}active{% endif %}"
+                       href="?page={{ page_num }}">{{ page_num }}</a></li>
+            {% endfor %}
+            {% if documents.has_next %}
+                <li>
+                    <a href="?page={{ documents.next_page_number }}"
+                       class="br-button circle"
+                       data-next-page="data-next-page"
+                       aria-label="Página seguinte">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+{% endblock content %}

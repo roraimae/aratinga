@@ -1,0 +1,17 @@
+{% load wagtailimages_tags %}
+
+<div class="br-item" role="listitem" data-toggle="collapse" data-target="l1">
+    <div class="row align-items-center">
+      <div class="col-auto"><i class="fas fa-file" aria-hidden="true"></i>
+      </div>
+      <div class="col">{{ document.title }}</div>
+      <div class="col-auto"><a type="btn" href="{{ document.url }}">Baixar</a></div>
+    </div>
+    <div class="content">
+      <div class="flex-fill">
+          {{ document.description }}
+      </div>
+    </div>
+  </div><span class="br-divider"></span>
+
+

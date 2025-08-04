@@ -2,7 +2,6 @@
 Bases, mixins, and utilities for blocks.
 """
 
-
 from django import forms
 from django.template.loader import render_to_string
 from django.utils.functional import cached_property

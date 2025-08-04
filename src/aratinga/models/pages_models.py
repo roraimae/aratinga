@@ -31,6 +31,7 @@ from wagtail.utils.decorators import cached_classmethod
 from aratinga.settings import cms_settings
 from aratinga.blocks import CONTENT_STREAMBLOCKS
 from aratinga.blocks import SECTION_STREAMBLOCKS
+from aratinga.blocks import COMPONENT_STREAMBLOCKS
 from aratinga.widgets import ClassifierSelectWidget
 from aratinga.models.snippets_models import ClassifierTerm, Template
 
@@ -187,7 +188,7 @@ class AratingaWebPage(AratingaPage):
     # Child pages should override based on what blocks they want in the body.
     # Default is LAYOUT_STREAMBLOCKS which is the fullest editor experience.
     body = StreamField(
-        SECTION_STREAMBLOCKS,
+        COMPONENT_STREAMBLOCKS,
         null=True,
         blank=True,
         use_json_field=True,
