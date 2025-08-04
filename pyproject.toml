@@ -9,7 +9,6 @@ authors = [
     {name = "Roraimae", email = "fabio@voreios.com.br"}
 ]
 dependencies = [
-    "ruff>=0.6.4",
     "Django>=4.2,<6.0",
     "wagtail>=6.0,<7.0",
 ]

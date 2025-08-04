@@ -24,15 +24,16 @@ from django.contrib import admin
 from django.urls import include
 from django.urls import path
 from wagtail.documents import urls as wagtaildocs_urls
+from search import views as search_views
 
 urlpatterns = [
     # Admin
     path("django-admin/", admin.site.urls),
     path("admin/", include(cms_admin_urls)),
     # Documents
-    path("docs/", include(wagtaildocs_urls)),
+    path("documents/", include(wagtaildocs_urls)),
     # Search
-    path("search/", include(cms_search_urls)),
+    path("search/", search_views.search, name="search"),
     # For anything not caught by a more specific rule above, hand over to
     # the page serving mechanism. This should be the last pattern in
     # the list:
