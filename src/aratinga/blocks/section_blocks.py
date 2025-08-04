@@ -17,7 +17,7 @@ class HeroBlock(StructBlock):
     image = ImageChooserBlock(required=True)
     hero_text = CharBlock(required=False)
     hero_cta =CharBlock(required=False)
-    hero_cta_link = CharBlock(required=False)
+    hero_cta_link = PageChooserBlock(required=False)
 
     class Meta:
         icon = "image"
