@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}template-searchresults{% endblock %}
+
+{% block title %}O que você procura?{% endblock %}
+
+{% block content %}
+<h1>O que você procura?</h1>
+
+<form action="{% url 'search' %}" method="get">
+<div class="br-input large input-button">
+<label for="input-search-large">Buscar</label>
+    <input type="search" placeholder="Digite uma palavra" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
+    <button type="submit" value="Pesquisa" class="br-button" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></button>
+</div>
+</form>
+
+{% if search_results %}
+<ul>
+    {% for result in search_results %}
+    <li>
+        <h4><a href="{{ result.url }}">{{ result }}</a></h4>
+        {% if result.search_description %}
+        {{ result.search_description }}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+{% if search_results.has_previous %}
+<a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
+{% endif %}
+
+{% if search_results.has_next %}
+<a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
+{% endif %}
+{% elif search_query %}
+Nenhum resultado encontrado
+{% endif %}
+{% endblock %}
