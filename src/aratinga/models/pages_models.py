@@ -216,7 +216,7 @@ class AratingaWebPage(AratingaPage):
         return mark_safe(preview)
 
 
-class AratingaArticlePage(AratingaWebPage):
+class AratingaArticlePage(AratingaPage):
     """
     Article, suitable for news or blog content.
     """
@@ -283,7 +283,7 @@ class AratingaArticlePage(AratingaWebPage):
     ]
 
 
-class AratingaArticleIndexPage(AratingaWebPage):
+class AratingaArticleIndexPage(AratingaPage):
     """
     Shows a list of article sub-pages.
     """
@@ -316,6 +316,11 @@ class AratingaArticleIndexPage(AratingaWebPage):
         default=True,
         verbose_name=_("Show preview text"),
     )
+
+    def children(self):
+        return self.get_children().specific().live().order_by("-first_published_at")
+
+
 
 
 class TemplatePage(Page):
