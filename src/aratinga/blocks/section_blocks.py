@@ -8,28 +8,29 @@ from wagtail.blocks import (
     IntegerBlock,
     PageChooserBlock
 )
-
+from django.utils.translation import gettext_lazy as _
 from wagtail.images.blocks import ImageChooserBlock
 
 class HeroBlock(StructBlock):
 
     # Hero section of HomePage
     image = ImageChooserBlock(required=True)
-    hero_text = CharBlock(required=False)
-    hero_cta =CharBlock(required=False)
-    hero_cta_link = PageChooserBlock(required=False)
+    title = CharBlock(required=False)
+    text = CharBlock(required=False)
+    cta =CharBlock(required=False)
+    cta_link = PageChooserBlock(required=False)
 
     class Meta:
         icon = "image"
         template = "aratinga/section/hero_block.html"
         preview_value = {"attribution": "The Wagtail Bakery"}
-        description = "An image with optional caption and attribution"
+        description = _("An image with optional caption and attribution")
 
 class PromoBlock(StructBlock):
     # Promo section of the HomePage
-    promo_image = ImageChooserBlock(required=True)
-    promo_title = CharBlock(required=False)
-    promo_text = RichTextBlock(
+    image = ImageChooserBlock(required=True)
+    title = CharBlock(required=False)
+    text = RichTextBlock(
         required=False, help_text="Write some promotional copy"
     )
 
@@ -62,7 +63,7 @@ class FeaturedSectionBlock(StructBlock):
         related_name="+",
         verbose_name="Seção em destaque",
         required=False, 
-        help_text="Featured section for the homepage. Will display up to three child items."
+        help_text=_("Featured section for the homepage. Will display up to three child items.")
         )
     
 
@@ -70,4 +71,4 @@ class FeaturedSectionBlock(StructBlock):
         icon = "image"
         template = "aratinga/section/featured_section_block.html"
         preview_value = {"attribution": "The Wagtail Bakery"}
-        description = "An image with optional caption and attribution"
+        description = _("An image with optional caption and attribution")
