@@ -4,7 +4,7 @@
         <ul class="featured-cards__list">
             {% for child in self.section.specific.children|slice:"3" %}
                 <li>
-                    {% include "includes/card/listing-card.html" with page=child %}
+                    {% include "card/listing-card.html" with block=child %}
                 </li>
             {% endfor %}
         </ul>

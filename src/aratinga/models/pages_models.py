@@ -230,6 +230,12 @@ class AratingaArticlePage(AratingaPage):
 
     related_show_default = True
 
+    caption = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name=_("Caption"),
+    )
+
     # Override body to provide simpler content
     body = StreamField(
         CONTENT_STREAMBLOCKS,
@@ -237,12 +243,7 @@ class AratingaArticlePage(AratingaPage):
         blank=True,
         use_json_field=True,
     )
-
-    caption = models.CharField(
-        max_length=255,
-        blank=True,
-        verbose_name=_("Caption"),
-    )
+    
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         null=True,
@@ -270,8 +271,10 @@ class AratingaArticlePage(AratingaPage):
         index.FilterField("date_display"),
     ]
 
-    content_panels = AratingaWebPage.content_panels + [
+    content_panels = [
+        FieldPanel("title"),
         FieldPanel("caption"),
+        FieldPanel("body"),
         MultiFieldPanel(
             [
                 FieldPanel("author"),
