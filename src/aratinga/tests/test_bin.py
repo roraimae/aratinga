@@ -80,3 +80,28 @@ class TestCmsStart(unittest.TestCase):
         # Assert files exist
         self.assertTrue(os.path.exists(os.path.join(self.TEST_DIR, "README.md")))
         self.cleanup()
+
+    def test_database_default_sqlite(self):
+        self.setup()
+        sys.argv = ["cms_main", "start", "myproject", self.TEST_DIR]
+        cms_main()
+        with open(os.path.join(self.TEST_DIR, "requirements.txt")) as f:
+            requirements = f.read()
+        self.assertNotIn("psycopg", requirements)
+        self.cleanup()
+
+    def test_database_postgres(self):
+        self.setup()
+        sys.argv = [
+            "cms_main",
+            "start",
+            "myproject",
+            self.TEST_DIR,
+            "--database",
+            "postgres",
+        ]
+        cms_main()
+        with open(os.path.join(self.TEST_DIR, "requirements.txt")) as f:
+            requirements = f.read()
+        self.assertIn("psycopg[binary]", requirements)
+        self.cleanup()
