@@ -1,0 +1,9 @@
+{% load wagtailcore_tags %}
+<div class="cms-checklist">
+  {% if self.title %}<h3 class="h5">{{ self.title }}</h3>{% endif %}
+  <ul class="list-unstyled">
+    {% for item in self.items %}
+    <li class="mb-1"><span class="text-success fw-bold me-2" aria-hidden="true">&#10003;</span>{{ item }}</li>
+    {% endfor %}
+  </ul>
+</div>

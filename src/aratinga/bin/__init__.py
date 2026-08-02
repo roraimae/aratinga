@@ -25,6 +25,17 @@ class CreateProject(TemplateCommand):
             "--domain",
             help='Domain that will be used for your website in production, e.g. "www.ies.edu.br"',
         )
+        parser.add_argument(
+            "--database",
+            choices=["sqlite", "postgres"],
+            default="sqlite",
+            help=(
+                "Database backend for production. 'sqlite' (default) needs no "
+                "extra service, good for small single-container sites. "
+                "'postgres' adds psycopg[binary] to requirements.txt to pair "
+                "with a Postgres container."
+            ),
+        )
         super().add_arguments(parser)
 
     def handle(self, **options):

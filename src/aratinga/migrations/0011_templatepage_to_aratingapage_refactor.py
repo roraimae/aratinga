@@ -71,7 +71,18 @@ class Migration(migrations.Migration):
             populate_aratingapage_ptr,
             reverse_code=reverse_populate_aratingapage_ptr,
         ),
-        # ── Step 3: make aratingapage_ptr the real primary key (non-nullable) ──
+        # ── Step 3: drop the old page_ptr field ──
+        # Must happen BEFORE promoting aratingapage_ptr to primary key below:
+        # Postgres enforces "one primary key per table" at DDL time (unlike
+        # SQLite, which rebuilds the table from the final model state and
+        # never has two PK constraints coexist mid-migration), so adding a
+        # second primary key while page_ptr is still one fails with
+        # "multiple primary keys ... are not allowed".
+        migrations.RemoveField(
+            model_name="templatepage",
+            name="page_ptr",
+        ),
+        # ── Step 4: make aratingapage_ptr the real primary key (non-nullable) ──
         migrations.AlterField(
             model_name="templatepage",
             name="aratingapage_ptr",
@@ -83,11 +94,6 @@ class Migration(migrations.Migration):
                 serialize=False,
                 to="aratinga.aratingapage",
             ),
-        ),
-        # ── Step 4: drop the old page_ptr field ──
-        migrations.RemoveField(
-            model_name="templatepage",
-            name="page_ptr",
         ),
         # ── Step 5: rename template -> snippet_template ──
         migrations.RenameField(

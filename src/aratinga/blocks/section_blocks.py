@@ -17,6 +17,7 @@ class HeroBlock(BaseBlock):
     """
 
     image = ImageChooserBlock(required=True, label=_("Image"))
+    eyebrow = CharBlock(required=False, label=_("Eyebrow/Tag"))
     title = CharBlock(required=False, label=_("Title"))
     text = CharBlock(required=False, label=_("Text"))
     cta = CharBlock(required=False, label=_("Call to action label"))

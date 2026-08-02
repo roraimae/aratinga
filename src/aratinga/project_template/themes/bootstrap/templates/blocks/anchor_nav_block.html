@@ -1,0 +1,8 @@
+{% load i18n wagtailcore_tags %}
+<nav class="cms-anchor-nav sticky-top bg-body border-bottom py-2" aria-label="{% trans 'Page navigation' %}">
+  <div class="d-flex flex-nowrap overflow-auto gap-1">
+    {% for item in self.items %}
+    <a href="{{ item.target }}" class="btn btn-sm btn-link text-nowrap">{{ item.label }}</a>
+    {% endfor %}
+  </div>
+</nav>

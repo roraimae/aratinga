@@ -28,7 +28,7 @@ class ThemeForm(forms.ModelForm):
             raise ValidationError(
                 _(
                     "The ZIP file must be named aratinga-theme_<name>.zip "
-                    "(e.g. aratinga-theme_bootstrap5.zip)."
+                    "(e.g. aratinga-theme_bootstrap.zip)."
                 )
             )
         return zip_file

@@ -3,6 +3,7 @@
     <div class="container">
         <div class="p-4 p-md-5 mb-4 rounded">
             <div class="col-md-6 px-0">
+                {% if self.eyebrow %}<span class="badge text-bg-light mb-2">{{ self.eyebrow }}</span>{% endif %}
                 <h1 class="display-4 fst-italic">{{ self.title }}</h1>
                 <p class="lead my-3">{{ self.text }}</p>
                 <p class="lead mb-0">

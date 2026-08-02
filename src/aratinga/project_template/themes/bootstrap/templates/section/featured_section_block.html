@@ -2,11 +2,13 @@
 {% if self.section %}
     <h2 class="pb-2 border-bottom">{{ self.title }}</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-    {% for child in self.section.specific.children|slice:"3" %}
+    {% with children=self.section.specific.get_children.live %}
+        {% for child in children|slice:"3" %}
         <div class="col">
             {% include "cards/listing-card.html" with block=child %}
         </div>
-    {% endfor %}
+        {% endfor %}
+    {% endwith %}
     </div>
     
     <a href="{{ self.section.url }}">

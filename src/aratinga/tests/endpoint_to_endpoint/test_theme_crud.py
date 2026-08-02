@@ -43,7 +43,7 @@ def test_admin_pode_criar_um_novo_tema(page: Page, live_server, admin_user):
     # 4.1. Preencher campos
     page.fill('input[name="name"]', theme_name)
     page.fill('textarea[name="description"]', "Descrição de teste E2E")
-    # 4.2. Importar arquivo './aratinga-theme_test_e2e.zip' (arquivo html do mysite 'mysite/themes/bootstrap5/index.html')
+    # 4.2. Importar arquivo './aratinga-theme_test_e2e.zip' (arquivo html do mysite 'mysite/themes/bootstrap/index.html')
     page.get_by_label("Zip file*").set_input_files(DUMMY_THEME_PATH)
 
     # 5. Enviar o Formulário

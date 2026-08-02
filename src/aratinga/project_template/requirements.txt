@@ -1,1 +1,7 @@
 aratinga
+gunicorn
+whitenoise
+django-environ
+redis
+{% if database == "postgres" %}psycopg[binary]
+{% endif %}

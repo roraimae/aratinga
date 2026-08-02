@@ -1,12 +1,12 @@
 # Descrição do projeto
 
-aratinga-theme_bootstrap5
+aratinga-theme_bootstrap
 
-Theme Bootstrap5 para o Aratinga CMS
+Tema Bootstrap para o Aratinga CMS
 
 ## Objetivo
 
-O objetivo deste projeto é combinar perfeitamente oo Bootstrap5.
+O objetivo deste projeto é combinar perfeitamente com o Bootstrap.
 
 ## Licença
 

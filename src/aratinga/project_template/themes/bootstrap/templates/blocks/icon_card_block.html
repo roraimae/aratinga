@@ -1,0 +1,8 @@
+{% load wagtailcore_tags %}
+<a class="card h-100 text-decoration-none text-reset mb-3" href="{{ self.url }}">
+  <div class="card-body">
+    {% if self.icon %}<span class="fs-2 d-block mb-2" aria-hidden="true">{{ self.icon }}</span>{% endif %}
+    <h3 class="h5 card-title">{{ self.title }}</h3>
+    {% if self.description %}<p class="card-text">{{ self.description }}</p>{% endif %}
+  </div>
+</a>

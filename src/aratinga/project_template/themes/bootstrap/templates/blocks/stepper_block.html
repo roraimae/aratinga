@@ -1,0 +1,12 @@
+{% load wagtailcore_tags %}
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 cms-stepper">
+  {% for step in self.steps %}
+  <div class="col">
+    <div class="p-3 h-100 border-top border-4 border-primary rounded bg-light">
+      <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary text-white fw-bold mb-2" style="width:2rem;height:2rem;">{{ forloop.counter }}</span>
+      <h3 class="h6">{{ step.title }}</h3>
+      {% if step.text %}<p class="mb-0">{{ step.text }}</p>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
