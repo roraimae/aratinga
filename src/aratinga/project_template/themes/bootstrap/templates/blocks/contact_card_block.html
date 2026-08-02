@@ -1,0 +1,12 @@
+{% load wagtailcore_tags %}
+<div class="card mb-3">
+  <div class="card-body">
+    <h3 class="h5 card-title">{{ self.title }}</h3>
+    <dl class="mb-0">
+      {% for item in self.items %}
+      <dt class="fw-bold">{{ item.label }}</dt>
+      <dd>{% if item.link %}<a href="{{ item.link }}">{{ item.value }}</a>{% else %}{{ item.value }}{% endif %}</dd>
+      {% endfor %}
+    </dl>
+  </div>
+</div>

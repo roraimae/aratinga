@@ -61,9 +61,9 @@ def initial_data(apps, schema_editor):
     )
 
     theme = Theme.objects.create(
-        name='Bootstrap5',
+        name='Bootstrap',
         description='',
-        theme_path='themes/bootstrap5'
+        theme_path='themes/bootstrap'
     )
 
     ts, created = ThemeSettings.objects.get_or_create(

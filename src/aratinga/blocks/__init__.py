@@ -27,6 +27,17 @@ from .html_blocks import (
     TableBlock
 )
 
+from .landing_blocks import (
+    AccordionBlock,
+    AlertBlock,
+    AnchorNavBlock,
+    ChecklistBlock,
+    ContactCardBlock,
+    IconCardBlock,
+    LinkListBlock,
+    StepperBlock,
+)
+
 from .layout_blocks import (
     GridBlock,
     CardGridBlock
@@ -75,6 +86,7 @@ LAYOUT_STREAMBLOCKS = [
         CardGridBlock(
             [
                 ("card", CardBlock()),
+                ("icon_card", IconCardBlock()),
             ]
         ),
     ),
@@ -92,4 +104,15 @@ SECTION_STREAMBLOCKS = [
     ("featured_section", FeaturedSectionBlock()),
 ]
 
-COMPONENT_STREAMBLOCKS = CONTENT_STREAMBLOCKS + SECTION_STREAMBLOCKS
+LANDING_STREAMBLOCKS = [
+    ("alert", AlertBlock()),
+    ("stepper", StepperBlock()),
+    ("checklist", ChecklistBlock()),
+    ("accordion", AccordionBlock()),
+    ("anchor_nav", AnchorNavBlock()),
+    ("icon_card", IconCardBlock()),
+    ("link_list", LinkListBlock()),
+    ("contact_card", ContactCardBlock()),
+]
+
+COMPONENT_STREAMBLOCKS = CONTENT_STREAMBLOCKS + SECTION_STREAMBLOCKS + LANDING_STREAMBLOCKS

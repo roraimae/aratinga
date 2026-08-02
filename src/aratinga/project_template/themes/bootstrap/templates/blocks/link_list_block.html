@@ -1,0 +1,11 @@
+{% load wagtailcore_tags %}
+<div class="card mb-3">
+  <div class="card-body">
+    <h3 class="h5 card-title">{{ self.title }}</h3>
+    <ul class="list-unstyled mb-0">
+      {% for link in self.links %}
+      <li class="border-top py-2"><a href="{{ link.url }}">{{ link.get_title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

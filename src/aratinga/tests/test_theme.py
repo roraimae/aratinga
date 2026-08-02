@@ -35,7 +35,7 @@ class ThemeAdminTestCase(TestCase):
         self.assertTrue(Theme.objects.filter(name='Gov.br').exists())
 
     def test_assign_theme_to_site(self):
-        theme = Theme.objects.create(name='Bootstrap', theme_path='/themes/bootstrap5')
+        theme = Theme.objects.create(name='Bootstrap', theme_path='/themes/bootstrap')
         site = Site.objects.get(is_default_site=True)
         settings = ThemeSettings.for_site(site)
         settings.theme = theme
@@ -43,7 +43,7 @@ class ThemeAdminTestCase(TestCase):
         self.assertEqual(settings.theme.name, 'Bootstrap')
 
     def test_list_available_themes(self):
-        Theme.objects.create(name='Bootstrap', theme_path='/themes/bootstrap5')
+        Theme.objects.create(name='Bootstrap', theme_path='/themes/bootstrap')
         Theme.objects.create(name='Gov.br', theme_path='/themes/govBr')
         themes = Theme.objects.all()
         print("Temas no banco de dados: ", [t.name for t in themes])

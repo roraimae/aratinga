@@ -1,0 +1,4 @@
+{% load wagtailcore_tags %}
+<div class="alert alert-{{ self.style|default:"info" }}" role="alert">
+  {% if self.title %}<strong>{{ self.title }}</strong> {% endif %}{{ self.text|richtext }}
+</div>

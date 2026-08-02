@@ -1,0 +1,22 @@
+{% load wagtailcore_tags %}
+{% with base_id="accordion" %}
+<div class="accordion" id="{{ base_id }}">
+  {% for panel in self.panels %}
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="{{ base_id }}-heading-{{ forloop.counter }}">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#{{ base_id }}-collapse-{{ forloop.counter }}" aria-expanded="false"
+        aria-controls="{{ base_id }}-collapse-{{ forloop.counter }}">
+        {{ panel.heading }}
+      </button>
+    </h3>
+    <div id="{{ base_id }}-collapse-{{ forloop.counter }}" class="accordion-collapse collapse"
+      aria-labelledby="{{ base_id }}-heading-{{ forloop.counter }}" data-bs-parent="#{{ base_id }}">
+      <div class="accordion-body">
+        {{ panel.body|richtext }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endwith %}
